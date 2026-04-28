@@ -90,13 +90,26 @@ export function RestaurantTable({ restaurants, onSelect }: Props) {
             </tr>
           </thead>
           <tbody className="divide-y divide-neutral-100">
-            {slice.map((r, i) => (
+            {slice.map((r, i) => {
+              const isPartner = r.auf_lieferando;
+              const isAkquise = !r.auf_lieferando && r.lead_score >= 2;
+              return (
               <tr
                 key={`${r.name}-${i}`}
-                className={`hover:bg-lieferando-50/50 ${onSelect ? "cursor-pointer" : ""}`}
+                className={`group transition ${
+                  isPartner
+                    ? "bg-blue-50/40 hover:bg-blue-100/50"
+                    : "hover:bg-lieferando-50/50"
+                } ${onSelect ? "cursor-pointer" : ""}`}
                 onClick={() => onSelect?.(r)}
               >
-                <td className="px-3 py-2 font-medium text-neutral-900">
+                <td className="relative px-3 py-2 font-medium text-neutral-900">
+                  {isPartner && (
+                    <span
+                      className="absolute left-0 top-0 h-full w-1 bg-blue-500"
+                      aria-hidden="true"
+                    />
+                  )}
                   <span className="hover:underline">{r.name}</span>
                 </td>
                 <td className="px-3 py-2 text-neutral-700">{labelKategorie(r.kategorie)}</td>
@@ -123,18 +136,31 @@ export function RestaurantTable({ restaurants, onSelect }: Props) {
                   <ScoreBadge score={r.lead_score} />
                 </td>
                 <td className="px-3 py-2">
-                  {r.auf_lieferando ? (
-                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
-                      Partner
+                  {isPartner ? (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-800 ring-1 ring-inset ring-blue-300">
+                      <span
+                        aria-hidden="true"
+                        className="inline-block h-1.5 w-1.5 rounded-full bg-blue-500"
+                      />
+                      Lieferando
+                    </span>
+                  ) : isAkquise ? (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-lieferando-50 px-2 py-0.5 text-xs font-semibold text-lieferando-dark ring-1 ring-inset ring-lieferando/40">
+                      <span
+                        aria-hidden="true"
+                        className="inline-block h-1.5 w-1.5 rounded-full bg-lieferando"
+                      />
+                      Akquise
                     </span>
                   ) : (
-                    <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600">
+                    <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-500">
                       offen
                     </span>
                   )}
                 </td>
               </tr>
-            ))}
+              );
+            })}
             {slice.length === 0 && (
               <tr>
                 <td colSpan={8} className="px-3 py-12 text-center text-neutral-500">
