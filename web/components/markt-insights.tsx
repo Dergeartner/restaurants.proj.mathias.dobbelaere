@@ -10,6 +10,7 @@ import type {
 } from "@/app/types";
 import { Badge } from "@/components/ui/badge";
 import { CuisineDonut } from "@/components/cuisine-donut";
+import { StadtteilMap } from "@/components/stadtteil-map";
 import { DrilldownModal, type DrilldownEntry } from "@/components/drilldown-modal";
 
 type Props = {
@@ -376,6 +377,13 @@ export function MarktInsights({
           })}
         </div>
       </div>
+
+      {/* Stadtteil-Karte */}
+      <StadtteilMap
+        restaurants={restaurants}
+        speisekartenRestaurants={speisekarten?.restaurants}
+        onSelectStadtteil={openStadtteilDrilldown}
+      />
 
       {/* Cuisine-Donut */}
       <CuisineDonut restaurants={restaurants} onSelectCuisine={openCuisineDrilldown} />
