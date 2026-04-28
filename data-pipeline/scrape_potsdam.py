@@ -1,5 +1,5 @@
 """
-Lieferando Partner Discovery – Potsdam
+Restaurant Market Discovery — Potsdam
 ======================================
 Holt alle gastronomischen Betriebe in Potsdam aus OpenStreetMap (Overpass API),
 berechnet einen Lead-Score, gleicht (optional) mit einer manuell erfassten

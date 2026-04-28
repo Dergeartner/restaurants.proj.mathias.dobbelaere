@@ -1,4 +1,4 @@
-# Lieferando Partner Discovery – Potsdam
+# Restaurant Market Discovery — Potsdam
 
 > Mini-Bewerbungsprojekt für die Stelle **Werkstudent Strategic Accounts (m/w/d)**
 > bei Just Eat Takeaway / Lieferando, Berlin.

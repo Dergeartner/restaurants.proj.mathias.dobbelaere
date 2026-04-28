@@ -3,9 +3,9 @@ import "./globals.css";
 import "leaflet/dist/leaflet.css";
 
 export const metadata: Metadata = {
-  title: "Lieferando Partner Discovery – Potsdam",
+  title: "Restaurant Market Discovery — Potsdam",
   description:
-    "Automatisiert erstellte Marktübersicht aller gastronomischen Betriebe in Potsdam aus OpenStreetMap-Daten – inkl. Akquise-Pipeline für Lieferando-Sales.",
+    "Sales-Discovery-Tool für den Gastromarkt Potsdam: priorisierte Akquise-Targets, Decision-Maker-Daten und Cluster-Analyse aus öffentlichen Datenquellen.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

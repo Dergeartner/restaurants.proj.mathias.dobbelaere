@@ -110,7 +110,7 @@ export async function exportToExcel(
   ).length;
 
   const summary: (string | number)[][] = [
-    ["Lieferando Partner Discovery — Potsdam"],
+    ["Restaurant Market Discovery — Potsdam"],
     [""],
     ["Export erstellt am", new Date().toLocaleString("de-DE")],
   ];

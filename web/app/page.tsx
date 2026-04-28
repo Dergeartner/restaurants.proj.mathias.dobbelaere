@@ -187,7 +187,7 @@ function Header({
       <div className="flex items-baseline gap-3">
         <span className="inline-block h-3 w-3 rounded-full bg-lieferando" />
         <h1 className="text-2xl font-semibold text-neutral-900 lg:text-3xl">
-          Lieferando Partner Discovery – Potsdam
+          Restaurant Market Discovery — Potsdam
         </h1>
       </div>
       <p className="mt-2 max-w-3xl text-sm text-neutral-600 lg:text-base">
