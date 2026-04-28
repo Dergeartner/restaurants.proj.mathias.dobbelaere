@@ -113,16 +113,68 @@ export function RestaurantGruppen({
         gleichzeitig — höhere ROI pro Sales-Stunde.
       </p>
 
+      {/* Status-Buckets als KPIs */}
+      <div className="mb-4 grid gap-2 sm:grid-cols-3">
+        <StatusKpi
+          color="emerald"
+          label="Trojaner-Akquise"
+          sublabel="Eine Location bereits Partner — Tür ist offen"
+          count={groups.filter((g) => g.on_lieferando > 0 && g.on_lieferando < g.total).length}
+          locations={groups
+            .filter((g) => g.on_lieferando > 0 && g.on_lieferando < g.total)
+            .reduce((s, g) => s + (g.total - g.on_lieferando), 0)}
+        />
+        <StatusKpi
+          color="orange"
+          label="Greenfield-Cluster"
+          sublabel="Keine Location auf Lieferando"
+          count={groups.filter((g) => g.on_lieferando === 0).length}
+          locations={groups
+            .filter((g) => g.on_lieferando === 0)
+            .reduce((s, g) => s + g.total, 0)}
+        />
+        <StatusKpi
+          color="blue"
+          label="Voll abgedeckt"
+          sublabel="Alle Locations bereits Partner"
+          count={groups.filter((g) => g.on_lieferando === g.total).length}
+          locations={groups
+            .filter((g) => g.on_lieferando === g.total)
+            .reduce((s, g) => s + g.total, 0)}
+        />
+      </div>
+
       <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
         {groups.map((g) => {
           const cleanedForm = cleanForm(g.geschaeftsform);
+          const isFullyPartner = g.on_lieferando === g.total;
+          const isTrojan = g.on_lieferando > 0 && g.on_lieferando < g.total;
+          const cardClasses = isFullyPartner
+            ? "border-blue-300 bg-blue-50/50 hover:border-blue-400"
+            : isTrojan
+              ? "border-emerald-300 bg-emerald-50/40 hover:border-emerald-500"
+              : "border-purple-100 bg-white hover:border-purple-300";
+          const statusBadge = isFullyPartner ? (
+            <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-blue-800 ring-1 ring-inset ring-blue-300">
+              ✓ Voll Partner
+            </span>
+          ) : isTrojan ? (
+            <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-800 ring-1 ring-inset ring-emerald-300">
+              🎯 Trojaner
+            </span>
+          ) : (
+            <span className="rounded-full bg-lieferando-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-lieferando-dark ring-1 ring-inset ring-lieferando/40">
+              🌱 Greenfield
+            </span>
+          );
           return (
             <button
               key={g.key}
               type="button"
               onClick={() => setOpenGroup(g)}
-              className="group flex flex-col rounded-lg border border-purple-100 bg-white p-4 text-left shadow-sm transition hover:border-purple-300 hover:shadow-md"
+              className={`group flex flex-col rounded-lg border p-4 text-left shadow-sm transition hover:shadow-md ${cardClasses}`}
             >
+              <div className="mb-2">{statusBadge}</div>
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline gap-1.5">
@@ -310,6 +362,41 @@ export function RestaurantGruppen({
         </DialogContent>
       </Dialog>
     </section>
+  );
+}
+
+function StatusKpi({
+  color,
+  label,
+  sublabel,
+  count,
+  locations,
+}: {
+  color: "emerald" | "orange" | "blue";
+  label: string;
+  sublabel: string;
+  count: number;
+  locations: number;
+}) {
+  const styles = {
+    emerald: "border-emerald-300 bg-emerald-50/60 text-emerald-900",
+    orange: "border-lieferando/40 bg-lieferando-50 text-lieferando-dark",
+    blue: "border-blue-300 bg-blue-50/60 text-blue-900",
+  }[color];
+  const valueColor = {
+    emerald: "text-emerald-700",
+    orange: "text-lieferando-dark",
+    blue: "text-blue-700",
+  }[color];
+  return (
+    <div className={`rounded-lg border p-3 ${styles}`}>
+      <div className="text-[11px] font-bold uppercase tracking-wide">{label}</div>
+      <div className="mt-1 flex items-baseline gap-2">
+        <span className={`text-2xl font-bold tabular-nums ${valueColor}`}>{count}</span>
+        <span className="text-xs">Gruppen · {locations} Locations</span>
+      </div>
+      <div className="mt-0.5 text-[10px] opacity-80">{sublabel}</div>
+    </div>
   );
 }
 
