@@ -182,11 +182,49 @@ export function RestaurantGruppen({
         })}
       </div>
 
-      <p className="mt-3 text-[11px] text-purple-800/70">
-        Methodik: Aggregation der Impressum-Daten über USt-IdNr und Geschäftsführer.
-        Mindestens 2 Restaurants pro Gruppe. Quelle: Impressum-Pflicht-
-        Veröffentlichungen nach §5 TMG.
-      </p>
+      <details className="mt-3 group rounded-md border border-purple-200/60 bg-white/40 px-3 py-2 text-[11px] text-purple-800/90">
+        <summary className="cursor-pointer select-none font-medium text-purple-900 marker:text-purple-400">
+          Methodik &amp; Tech-Stack
+        </summary>
+        <div className="mt-2 space-y-1.5 text-purple-800/85">
+          <p>
+            <strong>Pipeline:</strong> Pro Restaurant mit Website wird die
+            Impressum-Sub-Page automatisch identifiziert
+            (Keyword-Heuristik + Pfad-Pattern), HTML via{" "}
+            <code className="text-[10px]">requests + BeautifulSoup</code>{" "}
+            geparst, dann an{" "}
+            <code className="text-[10px]">OpenAI GPT-4o-mini</code> mit
+            strukturiertem JSON-Schema-Prompt geschickt
+            (<code className="text-[10px]">response_format: json_object</code>,{" "}
+            temperature 0.0 für Determinismus).
+          </p>
+          <p>
+            <strong>Extraktion:</strong> Inhaber, Geschäftsform, Geschäftsführer,
+            Adresse, Telefon, E-Mail, Handelsregister-Nummer, USt-IdNr.,
+            inhaltlich Verantwortlicher (§55 RStV/MStV).
+            Anti-Halluzinations-Strategie: explizite{" "}
+            <code className="text-[10px]">null</code>-Anweisung im Prompt für
+            fehlende Felder, plus Format-Validation (E-Mail-Pattern, Telefon-Whitelist).
+          </p>
+          <p>
+            <strong>Cluster-Detection:</strong> Aggregation der Impressum-Daten
+            über USt-IdNr (primärer Schlüssel) und Geschäftsführer-Name
+            (Fallback). Min. 2 Restaurants pro Gruppe. Identifiziert{" "}
+            Multi-Location-Eigentümer für Cluster-Akquise — Sales-relevante
+            Hochwertinformation, die manuell tagelang Recherche bräuchte.
+          </p>
+          <p>
+            <strong>Coverage:</strong> 70 % der Restaurant-Webseiten liefern
+            verwertbare Impressum-Daten (276 / 392). Restliche 30 %: keine
+            Webseite, JS-rendered Pages, oder Impressum-Plattform-Embeds —
+            lösbar mit Browser-Rendering (Pydoll/Playwright) als nächste Stufe.
+          </p>
+          <p>
+            <strong>Quelle:</strong> Impressum-Pflicht-Veröffentlichungen
+            nach §5 TMG — öffentliche, rechtssicher publizierte Daten.
+          </p>
+        </div>
+      </details>
 
       {/* Detail-Modal pro Gruppe */}
       <Dialog open={openGroup !== null} onOpenChange={(o) => !o && setOpenGroup(null)}>
