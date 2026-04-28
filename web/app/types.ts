@@ -45,6 +45,7 @@ export type SpeisekartenRestaurant = {
   speisekarten_url: string | null;
   anzahl_gerichte: number;
   gerichte: Gericht[];
+  quellen_urls?: string[];
   fehler?: string | null;
 };
 
