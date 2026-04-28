@@ -170,10 +170,15 @@ export function DrilldownModal({
                   <Th onClick={() => toggleSort("gericht")} active={sortKey === "gericht"} asc={sortAsc}>
                     Gericht
                   </Th>
+                  <th className="px-3 py-2" title="Speisekarten-Kategorie aus dem Menue (von GPT extrahiert)">
+                    Kategorie
+                  </th>
                   <Th onClick={() => toggleSort("restaurant")} active={sortKey === "restaurant"} asc={sortAsc}>
                     Restaurant
                   </Th>
-                  <th className="px-3 py-2">Cuisine</th>
+                  <th className="px-3 py-2" title="Restaurant-Cuisine aus OpenStreetMap-Tag">
+                    Restaurant-Cuisine
+                  </th>
                   <Th onClick={() => toggleSort("preis")} active={sortKey === "preis"} asc={sortAsc} align="right">
                     Preis
                   </Th>
@@ -185,6 +190,15 @@ export function DrilldownModal({
                   return (
                     <tr key={`${e.restaurant}-${e.gericht}-${i}`} className="hover:bg-lieferando-50/40">
                       <td className="px-3 py-2 text-neutral-800">{e.gericht}</td>
+                      <td className="px-3 py-2 text-xs">
+                        {e.kategorie ? (
+                          <span className="rounded bg-lieferando-50 px-2 py-0.5 font-medium text-lieferando-dark">
+                            {e.kategorie}
+                          </span>
+                        ) : (
+                          <span className="text-neutral-400">—</span>
+                        )}
+                      </td>
                       <td className="px-3 py-2">
                         {r && onRestaurantClick ? (
                           <button

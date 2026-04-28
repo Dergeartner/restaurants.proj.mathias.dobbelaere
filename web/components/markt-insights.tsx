@@ -159,10 +159,14 @@ export function MarktInsights({
     const entries = allEntries.filter(
       (e) => e.cuisine.toLowerCase() === cuisineKey.toLowerCase(),
     );
+    const restaurantCount = new Set(entries.map((e) => e.restaurant)).size;
     setDrilldown({
       open: true,
-      title: `Speisen — Cuisine: ${label}`,
-      description: `Alle Gerichte aus Restaurants der Kategorie ${label} (mit verfügbarer Speisekarte)`,
+      title: `Speisen — Restaurant-Cuisine: ${label}`,
+      description:
+        `Alle Speisen aus ${restaurantCount} Restaurant${restaurantCount === 1 ? "" : "s"} ` +
+        `mit OSM-Cuisine "${label}" — kann gemischte Gericht-Kategorien enthalten ` +
+        `(z.B. Pizza-Restaurants verkaufen oft auch Pasta oder Burger).`,
       entries,
     });
   };
