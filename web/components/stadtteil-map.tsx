@@ -4,9 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MapPin } from "lucide-react";
 import type { Restaurant } from "@/app/types";
 
-// Offizielle Potsdam-Bezirks-/Stadtteil-Codes aus der SVG (Source: Statistisches
-// Informationssystem Potsdam). Position des <text>-Elements in der SVG und der
-// Stadtteilname wie er in unserer OSM-Liste auftaucht.
 const BEZIRKS_MAPPING: Record<string, string[]> = {
   "11": ["Historische Innenstadt", "Nikolaigärten"],
   "12": ["Brandenburger Vorstadt", "Westliche Vorstadt"],
@@ -42,7 +39,6 @@ const BEZIRKS_MAPPING: Record<string, string[]> = {
   "86": ["Groß Glienicke"],
 };
 
-// Position der Text-Marker in der SVG (aus translate(...) extrahiert)
 const BEZIRKS_POSITIONS: Record<string, { x: number; y: number }> = {
   "81": { x: 157.3, y: 268.89 },
   "82": { x: 331.29, y: 352.89 },
@@ -105,13 +101,31 @@ const SPEISE_KAT = new Set([
   "kindergericht", "dessert", "sonstiges",
 ]);
 
+// Lieferando-Orange-basierte Color-Scale: blassgelb → kräftig orange
 function priceColor(price: number, min: number, max: number): string {
   if (max === min) return "#FFB870";
   const t = Math.max(0, Math.min(1, (price - min) / (max - min)));
-  // Skala: hellbeige (günstig) → tieforange (teuer)
-  const r = Math.round(255 - (255 - 224) * (1 - t));
-  const g = Math.round(244 - (244 - 115) * t);
-  const b = Math.round(214 - (214 - 24) * t);
+  // Skala: #FFF4D6 (sehr hell) → #E07300 (Lieferando-dark, intensiv)
+  const stops = [
+    { t: 0.0, r: 255, g: 244, b: 214 },
+    { t: 0.33, r: 255, g: 200, b: 130 },
+    { t: 0.67, r: 255, g: 140, b: 50 },
+    { t: 1.0, r: 224, g: 100, b: 0 },
+  ];
+  let lower = stops[0];
+  let upper = stops[stops.length - 1];
+  for (let i = 0; i < stops.length - 1; i++) {
+    if (t >= stops[i].t && t <= stops[i + 1].t) {
+      lower = stops[i];
+      upper = stops[i + 1];
+      break;
+    }
+  }
+  const range = upper.t - lower.t;
+  const localT = range === 0 ? 0 : (t - lower.t) / range;
+  const r = Math.round(lower.r + (upper.r - lower.r) * localT);
+  const g = Math.round(lower.g + (upper.g - lower.g) * localT);
+  const b = Math.round(lower.b + (upper.b - lower.b) * localT);
   return `rgb(${r}, ${g}, ${b})`;
 }
 
@@ -123,12 +137,10 @@ export function StadtteilMap({
   const containerRef = useRef<HTMLDivElement>(null);
   const [svgLoaded, setSvgLoaded] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
 
-  // Stats pro Stadtteil
   const stadtteilStats = useMemo<Map<string, StadtteilStats>>(() => {
     const result = new Map<string, StadtteilStats>();
-
-    // Restaurant-Median pro Stadtteil
     const speisekartenMap = new Map<string, number[]>();
     if (speisekartenRestaurants) {
       for (const sr of speisekartenRestaurants) {
@@ -145,7 +157,6 @@ export function StadtteilMap({
         speisekartenMap.get(r.stadtteil)!.push(m);
       }
     }
-
     for (const r of restaurants) {
       if (!r.stadtteil || r.stadtteil === "Unbekannt") continue;
       const existing = result.get(r.stadtteil);
@@ -163,16 +174,13 @@ export function StadtteilMap({
         });
       }
     }
-
     for (const [stadtteil, prices] of speisekartenMap.entries()) {
       const stats = result.get(stadtteil);
       if (stats) stats.median_price = median(prices);
     }
-
     return result;
   }, [restaurants, speisekartenRestaurants]);
 
-  // Min/Max-Preis für Color-Scale
   const priceRange = useMemo(() => {
     const prices = Array.from(stadtteilStats.values())
       .map((s) => s.median_price)
@@ -181,46 +189,56 @@ export function StadtteilMap({
     return { min: Math.min(...prices), max: Math.max(...prices) };
   }, [stadtteilStats]);
 
-  // SVG laden + manipulieren
   useEffect(() => {
     if (!containerRef.current) return;
     const container = containerRef.current;
-
     fetch("/potsdam-stadtteile.svg")
       .then((r) => r.text())
       .then((svgText) => {
         container.innerHTML = svgText;
         const svg = container.querySelector("svg");
         if (!svg) return;
-        // Responsive
         svg.setAttribute("width", "100%");
         svg.setAttribute("height", "100%");
         svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-        svg.style.maxHeight = "550px";
+        svg.style.maxHeight = "560px";
+
+        // Original-Farbklassen der Stadtteile entfernen — sie überschreiben sonst unser fill
+        const stadtteilGroup = svg.querySelector("#Areas_Stadtteile");
+        if (stadtteilGroup) {
+          stadtteilGroup.querySelectorAll("polygon").forEach((p) => {
+            // Klassen wie st1, st3, st4, st5 entfernen
+            p.removeAttribute("class");
+            (p as SVGPolygonElement).style.fill = "#F5F5F5";
+            (p as SVGPolygonElement).style.stroke = "#FFFFFF";
+            (p as SVGPolygonElement).style.strokeWidth = "0.5";
+          });
+        }
+        // Auch die Bezirks-Areas entfernen damit sie nicht überlagern
+        const bezirksGroup = svg.querySelector("#Areas_Bezirke");
+        if (bezirksGroup) {
+          bezirksGroup.querySelectorAll("polygon, path").forEach((el) => {
+            (el as SVGElement).style.opacity = "0";
+          });
+        }
         setSvgLoaded(true);
       })
       .catch((e) => console.error("SVG load failed", e));
   }, []);
 
-  // Polygone einfärben nach Median-Preis sobald SVG geladen
   useEffect(() => {
     if (!svgLoaded || !containerRef.current) return;
     const container = containerRef.current;
     const svg = container.querySelector("svg");
     if (!svg) return;
-
-    // Alle Polygone in Areas_Stadtteile-Gruppe
     const stadtteilGroup = svg.querySelector("#Areas_Stadtteile");
     if (!stadtteilGroup) return;
     const polygons = stadtteilGroup.querySelectorAll("polygon");
 
-    // Pro Bezirks-Nummer: finde Polygon dessen Bounding-Box den Text enthält
     const polyByBezirk: Record<string, SVGPolygonElement[]> = {};
-
     for (const code of Object.keys(BEZIRKS_POSITIONS)) {
       polyByBezirk[code] = [];
     }
-
     polygons.forEach((poly) => {
       try {
         const bbox = (poly as SVGPolygonElement).getBBox();
@@ -237,7 +255,8 @@ export function StadtteilMap({
       } catch {}
     });
 
-    // Färben
+    // Color + Events anwenden
+    const cleanups: (() => void)[] = [];
     for (const [code, polys] of Object.entries(polyByBezirk)) {
       const stadtteilNames = BEZIRKS_MAPPING[code] || [];
       let stats: StadtteilStats | null = null;
@@ -248,36 +267,58 @@ export function StadtteilMap({
           break;
         }
       }
-
       const fillColor =
         stats && stats.median_price != null
           ? priceColor(stats.median_price, priceRange.min, priceRange.max)
-          : "#F1F1F1";
+          : stats
+            ? "#FFF4D6" // hat Restaurants aber keine Preisdaten — sehr hell
+            : "#E5E7EB"; // gar keine Daten — neutral grau
 
       polys.forEach((poly) => {
-        poly.setAttribute("fill", fillColor);
+        poly.style.fill = fillColor;
+        poly.style.stroke = "#FFFFFF";
+        poly.style.strokeWidth = "1";
         poly.style.cursor = stats ? "pointer" : "default";
-        poly.style.transition = "fill 0.2s, opacity 0.2s";
+        poly.style.transition = "filter 0.15s, stroke-width 0.15s";
 
-        const handleMove = () => {
-          if (stats) {
-            poly.style.opacity = "0.7";
-            setHovered(stats.name);
-          }
+        const handleEnter = (e: Event) => {
+          if (!stats) return;
+          poly.style.filter = "brightness(1.1) drop-shadow(0 0 4px rgba(255, 128, 0, 0.5))";
+          poly.style.strokeWidth = "2.5";
+          poly.style.stroke = "#FF8000";
+          setHovered(stats.name);
+        };
+        const handleMove = (e: MouseEvent) => {
+          const rect = container.getBoundingClientRect();
+          setTooltipPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
         };
         const handleLeave = () => {
-          poly.style.opacity = "1";
+          poly.style.filter = "";
+          poly.style.strokeWidth = "1";
+          poly.style.stroke = "#FFFFFF";
           setHovered(null);
+          setTooltipPos(null);
         };
         const handleClick = () => {
           if (stats && onSelectStadtteil) onSelectStadtteil(stats.name);
         };
 
-        poly.addEventListener("mouseenter", handleMove);
+        poly.addEventListener("mouseenter", handleEnter as EventListener);
+        poly.addEventListener("mousemove", handleMove as EventListener);
         poly.addEventListener("mouseleave", handleLeave);
         poly.addEventListener("click", handleClick);
+        cleanups.push(() => {
+          poly.removeEventListener("mouseenter", handleEnter as EventListener);
+          poly.removeEventListener("mousemove", handleMove as EventListener);
+          poly.removeEventListener("mouseleave", handleLeave);
+          poly.removeEventListener("click", handleClick);
+        });
       });
     }
+
+    return () => {
+      for (const c of cleanups) c();
+    };
   }, [svgLoaded, stadtteilStats, priceRange, onSelectStadtteil]);
 
   const hoveredStats = hovered ? stadtteilStats.get(hovered) : null;
@@ -292,95 +333,101 @@ export function StadtteilMap({
           </h4>
         </div>
         <span className="text-[10px] uppercase tracking-wide text-blue-600">
-          Einfärbung nach Median-Speisepreis · Klick öffnet Drilldown
+          Einfärbung nach Median-Speisepreis · Hover für Details · Klick öffnet Drilldown
         </span>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-[1fr_220px]">
+      <div className="relative">
         <div
           ref={containerRef}
-          className="relative min-h-[400px] overflow-hidden rounded border border-neutral-200 bg-neutral-50"
+          className="relative min-h-[400px] overflow-hidden rounded-lg border border-neutral-200 bg-gradient-to-br from-blue-50/30 to-white"
         />
 
-        <div className="space-y-3">
-          {/* Hover-Info */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50/60 p-3">
-            <div className="text-[10px] font-medium uppercase tracking-wide text-neutral-500">
-              {hoveredStats ? "Stadtteil" : "Hover über einen Stadtteil"}
+        {/* Floating-Tooltip beim Hover */}
+        {hoveredStats && tooltipPos && (
+          <div
+            className="pointer-events-none absolute z-30 min-w-[220px] rounded-lg border border-neutral-200 bg-white p-3 shadow-xl"
+            style={{
+              left: Math.min(tooltipPos.x + 12, 800),
+              top: tooltipPos.y + 12,
+            }}
+          >
+            <div className="text-sm font-semibold text-neutral-900">
+              {hoveredStats.name}
             </div>
-            {hoveredStats ? (
-              <>
-                <div className="mt-1 text-sm font-semibold text-neutral-900">
-                  {hoveredStats.name}
-                </div>
-                <div className="mt-2 space-y-1 text-xs text-neutral-700">
-                  <div className="flex justify-between gap-2">
-                    <span>Restaurants</span>
-                    <span className="tabular-nums font-semibold">
-                      {hoveredStats.count}
-                    </span>
-                  </div>
-                  <div className="flex justify-between gap-2">
-                    <span>Hot Leads</span>
-                    <span className="tabular-nums font-semibold text-emerald-700">
-                      {hoveredStats.hot_leads}
-                    </span>
-                  </div>
-                  <div className="flex justify-between gap-2">
-                    <span>Auf Lieferando</span>
-                    <span className="tabular-nums font-semibold text-blue-700">
-                      {hoveredStats.on_lieferando}
-                    </span>
-                  </div>
-                  {hoveredStats.median_price != null && (
-                    <div className="flex justify-between gap-2 border-t border-neutral-200 pt-1">
-                      <span>Ø Speisepreis</span>
-                      <span className="tabular-nums font-semibold text-lieferando-dark">
-                        {hoveredStats.median_price.toFixed(2)} €
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </>
-            ) : (
-              <div className="mt-1 text-xs text-neutral-500">
-                Bewegt die Maus über die Karte um Details zu sehen.
+            <div className="mt-2 space-y-1 text-xs text-neutral-700">
+              <div className="flex justify-between gap-4">
+                <span>Restaurants</span>
+                <span className="tabular-nums font-semibold">
+                  {hoveredStats.count}
+                </span>
               </div>
-            )}
+              <div className="flex justify-between gap-4">
+                <span className="text-emerald-700">Hot Leads</span>
+                <span className="tabular-nums font-semibold text-emerald-700">
+                  {hoveredStats.hot_leads}
+                </span>
+              </div>
+              <div className="flex justify-between gap-4">
+                <span className="text-blue-700">Auf Lieferando</span>
+                <span className="tabular-nums font-semibold text-blue-700">
+                  {hoveredStats.on_lieferando}
+                </span>
+              </div>
+              {hoveredStats.median_price != null && (
+                <div className="mt-1 flex justify-between gap-4 border-t border-neutral-200 pt-1.5">
+                  <span className="font-medium">Median-Speisepreis</span>
+                  <span className="tabular-nums font-bold text-lieferando-dark">
+                    {hoveredStats.median_price.toFixed(2)} €
+                  </span>
+                </div>
+              )}
+            </div>
+            <div className="mt-2 text-[10px] text-neutral-500">
+              Klick öffnet die Speise-Liste
+            </div>
           </div>
+        )}
 
-          {/* Color-Legende */}
-          {priceRange.max > priceRange.min && (
-            <div className="rounded-lg border border-neutral-200 bg-white p-3">
-              <div className="text-[10px] font-medium uppercase tracking-wide text-neutral-500">
-                Median-Preis-Skala
-              </div>
-              <div
-                className="mt-2 h-3 rounded"
-                style={{
-                  background: `linear-gradient(to right, ${priceColor(priceRange.min, priceRange.min, priceRange.max)}, ${priceColor(priceRange.max, priceRange.min, priceRange.max)})`,
-                }}
-              />
-              <div className="mt-1 flex justify-between text-xs text-neutral-600 tabular-nums">
-                <span>{priceRange.min.toFixed(2)} €</span>
-                <span>{priceRange.max.toFixed(2)} €</span>
-              </div>
-              <div className="mt-2 flex items-center gap-2 text-[11px] text-neutral-500">
+        {/* Color-Legende rechts oben */}
+        {priceRange.max > priceRange.min && (
+          <div className="absolute right-4 top-4 rounded-lg border border-neutral-200 bg-white/95 p-3 shadow-md backdrop-blur-sm">
+            <div className="text-[10px] font-medium uppercase tracking-wide text-neutral-500">
+              Median-Speisepreis
+            </div>
+            <div
+              className="mt-2 h-3 w-32 rounded"
+              style={{
+                background: `linear-gradient(to right, ${priceColor(priceRange.min, priceRange.min, priceRange.max)}, ${priceColor((priceRange.min + priceRange.max) / 2, priceRange.min, priceRange.max)}, ${priceColor(priceRange.max, priceRange.min, priceRange.max)})`,
+              }}
+            />
+            <div className="mt-1 flex justify-between text-[11px] text-neutral-600 tabular-nums">
+              <span>{priceRange.min.toFixed(2)} €</span>
+              <span>{priceRange.max.toFixed(2)} €</span>
+            </div>
+            <div className="mt-2 flex flex-col gap-1 text-[10px] text-neutral-600">
+              <div className="flex items-center gap-1.5">
                 <span
-                  className="inline-block h-3 w-3 rounded"
-                  style={{ backgroundColor: "#F1F1F1" }}
+                  className="inline-block h-3 w-3 rounded-sm"
+                  style={{ backgroundColor: "#FFF4D6" }}
                 />
-                Keine Preisdaten
+                Restaurants ohne Preisdaten
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span
+                  className="inline-block h-3 w-3 rounded-sm"
+                  style={{ backgroundColor: "#E5E7EB" }}
+                />
+                Keine OSM-Daten
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <p className="mt-3 text-[11px] text-blue-800/70">
         Quelle: Wikimedia Commons (Potsdam_subdivisions.svg, gemeinfrei). Daten:
-        Restaurant-Speisekarten via OSM/GMaps + GPT-4o-mini-Extraktion. Polygone
-        mit hellgrauer Färbung haben keine ausreichenden Speisekartendaten.
+        OSM-Restaurants + GPT-4o-mini-Speisekarten-Extraktion.
       </p>
     </div>
   );
