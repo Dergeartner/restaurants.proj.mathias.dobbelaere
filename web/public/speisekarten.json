@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T08:18:09",
+  "generated_at": "2026-04-28T14:44:08",
   "model": "llama3.1:8b",
   "anzahl_restaurants": 392,
   "restaurants": [
@@ -1278,8 +1278,7 @@
       "speisekarten_url": "https://www.restaurant-golme.de/speisekarte/",
       "quellen_urls": [
         "https://www.restaurant-golme.de/",
-        "https://www.restaurant-golme.de/speisekarte/",
-        "https://www.restaurant-golme.de/spargelessen/"
+        "https://www.restaurant-golme.de/speisekarte/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -1995,12 +1994,103 @@
       "quellen_urls": [
         "https://www.restaurant-juliette.de/",
         "https://www.restaurant-juliette.de/speisekarte.html",
-        "https://www.restaurant-juliette.de/bankettmenue.html",
-        "https://www.restaurant-juliette.de/weinkarte.html"
+        "https://www.restaurant-juliette.de/Speisekarte.pdf",
+        "https://www.restaurant-juliette.de/Speisekarte_en.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 18,
+      "gerichte": [
+        {
+          "gericht": "3 Gang Menü",
+          "preis": 72.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "4 Gang Menü",
+          "preis": 86.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "5 Gang Menü",
+          "preis": 96.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "6 Gang Menü",
+          "preis": 109.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "2 Gänge",
+          "preis": 18.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "3 Gänge",
+          "preis": 27.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "4 Gänge",
+          "preis": 36.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "5 Gänge",
+          "preis": 43.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Tatar vom Rinderfilet",
+          "preis": 21.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Huitres Fraiches Pléiade Poget (3 Stück)",
+          "preis": 16.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Huitres Fraiches Pléiade Poget (6 Stück)",
+          "preis": 28.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Huitres Fraiches Pléiade Poget (9 Stück)",
+          "preis": 38.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Soupe Lauchcremesuppe",
+          "preis": 16.0,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Gebackene Linsenkrapfen",
+          "preis": 28.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Crottin de Chavignol",
+          "preis": 18.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Assiette de fromage (3 Sorten)",
+          "preis": 16.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Assiette de fromage (5 Sorten)",
+          "preis": 24.0,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Crème Brûlée",
+          "preis": 13.0,
+          "kategorie": "Dessert"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Hermanns Mensa",
@@ -2095,7 +2185,6 @@
         "https://www.mylia.de/bestellen/",
         "http://www.mylia.de/speisen-getraenke",
         "https://www.mylia.de/speisen-getraenke/",
-        "https://www.mylia.de/bestellen",
         "https://www.mylia.de/gutschein"
       ],
       "anzahl_gerichte": 0,
@@ -2121,15 +2210,7 @@
       "speisekarten_url": "https://www.kashmirhauspotsdam.de/lieferdienst-anmelden",
       "quellen_urls": [
         "https://www.kashmirhauspotsdam.de",
-        "https://www.kashmirhauspotsdam.de/lieferdienst-anmelden",
-        "https://www.kashmirhauspotsdam.de/essen-bestellen-plz-0-1",
-        "https://www.kashmirhauspotsdam.de/lieferdienste-deutschland-kartenansicht",
-        "https://www.kashmirhauspotsdam.de/ueber-gopizzago",
-        "https://www.kashmirhauspotsdam.de/lieferservice-berlin?kcuid=354",
-        "https://www.kashmirhauspotsdam.de/lieferservice-frankfurt-am-main?kcuid=154",
-        "https://www.kashmirhauspotsdam.de/lieferservice-karlsruhe?gcuid=688",
-        "https://www.kashmirhauspotsdam.de/lieferservice-koeln?kcuid=326",
-        "https://www.kashmirhauspotsdam.de/lieferservice-duisburg?gcuid=644"
+        "https://www.kashmirhauspotsdam.de/lieferdienst-anmelden"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -2597,9 +2678,7 @@
       "speisekarten_url": "https://www.brasserie-zu-gutenberg.de/genuss-am-mittag/",
       "quellen_urls": [
         "https://www.brasserie-zu-gutenberg.de/",
-        "https://www.brasserie-zu-gutenberg.de/genuss-am-mittag/",
-        "https://www.brasserie-zu-gutenberg.de/genuss-am-abend-ab-1700-uhr/",
-        "https://www.brasserie-zu-gutenberg.de/speisekarte/"
+        "https://www.brasserie-zu-gutenberg.de/genuss-am-mittag/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -4531,9 +4610,55 @@
       "quellen_urls": [
         "https://www.ulfscafe.de/"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 9,
+      "gerichte": [
+        {
+          "gericht": "Hühnerfrikassee mit Reis und Salat",
+          "preis": 8.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Blumenkohlcremesuppe",
+          "preis": 4.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Hausgemachte Falafel mit Cous Cous Mangojoghurt und Erdnusssauce und Salat",
+          "preis": 8.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Rinderboulette mit hausgemachten Kartoffelsalat",
+          "preis": 8.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gegrillter Hirtenkäse mit Belugalinsen und Salat",
+          "preis": 8.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Birnen mit Ziegenkäse überbacken auf Salat",
+          "preis": 8.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gegrillte Aubergine mit Zitronenjoghurt, Granatäpfel, Cous Cous und Salat",
+          "preis": 8.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Räucherlachs auf Pellkartoffeln und Kräuterquark uns Salat",
+          "preis": 8.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Nudelsalat mit Rucolapesto und Tomate Mozzarella",
+          "preis": 8.0,
+          "kategorie": "Hauptgericht"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "China-Thai-Snack",
@@ -4566,7 +4691,8 @@
       "speisekarten_url": "https://www.akropolis-potsdam.de/speisekarte/",
       "quellen_urls": [
         "https://www.akropolis-potsdam.de",
-        "https://www.akropolis-potsdam.de/speisekarte/"
+        "https://www.akropolis-potsdam.de/speisekarte/",
+        "http://www.akropolis-potsdam.de/menu/ausserhaus-akropolis-potsdam.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -4579,7 +4705,8 @@
       "speisekarten_url": "https://www.hotel-ascot-bristol.de/restaurant/speisekarte/",
       "quellen_urls": [
         "https://www.hotel-ascot-bristol.de/de/restaurant-in-potsdam/restaurant-journal/das-restaurant-journal.html",
-        "https://www.hotel-ascot-bristol.de/restaurant/speisekarte/"
+        "https://www.hotel-ascot-bristol.de/restaurant/speisekarte/",
+        "https://www.hotel-ascot-bristol.de/wp-content/uploads/2026/03/Speisekarte-2026.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -4761,9 +4888,7 @@
         "https://pizza-pizzeria-ristorante.de/",
         "https://pizza-pizzeria-ristorante.de/bundesland-brandenburg",
         "https://pizza-pizzeria-ristorante.de/potsdam",
-        "https://pizza-pizzeria-ristorante.de/potsdam/potsdam-eiche/fischrestaurants",
-        "https://pizza-pizzeria-ristorante.de/potsdam/potsdam-eiche/sushi-bar",
-        "https://pizza-pizzeria-ristorante.de/fuessen"
+        "https://pizza-pizzeria-ristorante.de/potsdam/potsdam-eiche/fischrestaurants"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -6212,15 +6337,7 @@
       "quellen_urls": [
         "https://fleischerei-riek.de/imbiss/",
         "https://fleischerei-riek.de",
-        "http://fleischerei-riek.de/",
-        "https://fleischerei-riek.de/marktstand/",
-        "https://fleischerei-riek.de/catering/",
-        "https://fleischerei-riek.de/ueber-uns/",
-        "https://fleischerei-riek.de/kontakt/",
-        "http://fleischerei-riek.de/datenschutz/",
-        "https://fleischerei-riek.de/datenschutz/“",
-        "https://fleischerei-riek.de/impressum/“",
-        "https://fleischerei-riek.de/barrierefreiheit/“"
+        "http://fleischerei-riek.de/datenschutz/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -6821,10 +6938,7 @@
       "quellen_urls": [
         "https://www.pizzapipasa.de/",
         "https://www.pizzapipasa.de/dataPrivacy",
-        "https://www.pizzapipasa.de/imprint",
-        "https://www.pizzapipasa.de/outdoor-delivery",
-        "https://www.pizzapipasa.de/customerdata/forgotPassword",
-        "https://www.pizzapipasa.de/storedata/selectStore?store_id=&deliveryarea_id=0"
+        "https://www.pizzapipasa.de/outdoor-delivery"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -6850,8 +6964,7 @@
       "speisekarten_url": "https://www.asiathaibistro.de/menu",
       "quellen_urls": [
         "https://www.asiathaibistro.de/",
-        "https://www.asiathaibistro.de/menu",
-        "https://www.asiathaibistro.de/online-ordering-1"
+        "https://www.asiathaibistro.de/menu"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -7106,11 +7219,7 @@
       "quellen_urls": [
         "https://www.baeckereiexner.de/",
         "https://www.baeckereiexner.de/brote-broetchen/",
-        "https://www.baeckereiexner.de/kuchen-torten/",
-        "https://www.baeckereiexner.de/snacks-kaffee/",
-        "https://www.baeckereiexner.de/spezialitaeten/",
-        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf",
-        "https://www.baeckereiexner.de/formular_genusskarte/"
+        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -7162,13 +7271,174 @@
       "quellen_urls": [
         "https://www.maison-charlotte.de/",
         "https://www.maison-charlotte.de/de/speisen-getraenke/speisekarte/?navid=562221562221",
-        "https://www.maison-charlotte.de/de/speisen-getraenke/speisekarte/?navid=416507416507",
-        "https://www.maison-charlotte.de/de/speisen-getraenke/weinkarte/",
-        "https://www.maison-charlotte.de/de/restaurant/speisen-getraenke/"
+        "https://www.maison-charlotte.de/default-wAssets/docs/Menue-Charlotte-11.2025.pdf",
+        "https://www.maison-charlotte.de/de/restaurant/speisen-getraenke/",
+        "https://www.maison-charlotte.de/default-wAssets/docs/Menue-Charlotte-11.2022.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 32,
+      "gerichte": [
+        {
+          "gericht": "Foie Gras",
+          "preis": 18.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Filet de boeuf",
+          "preis": 45.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Filet d'omble de l'Àtlantique",
+          "preis": 37.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Crème Brûlée",
+          "preis": 8.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Salade de betteraves à la crème de chou-fleur",
+          "preis": 17.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Beignets de pain frits avec carottes, d'épinards sautées et beurre blanc à l'orange",
+          "preis": 29.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Crottin de Chavignol tiède aux chutney de pomme et thym",
+          "preis": 14.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Gâteau au massepain et aux amandes avec crème au citron et glace spéculoos",
+          "preis": 14.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Crevettes frites avec salsifis, vanille, citron vert et chou frisé",
+          "preis": 18.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Soupe à l'oignon caramélisé avec croûton de Gruyère",
+          "preis": 10.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Filet de lotte rôti sur risotto aux pommes, chicorée et betterave",
+          "preis": 38.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Cuisse de canard confite",
+          "preis": 36.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gâteau aux poires avec glace à la noisette",
+          "preis": 14.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Huitres fine de claire (3 portions)",
+          "preis": 14.5,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Huitres fine de claire (6 portions)",
+          "preis": 26.5,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Huitres gratinées (3 portions)",
+          "preis": 16.5,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Huitres gratinées (6 portions)",
+          "preis": 29.5,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Tartare de boeuf",
+          "preis": 17.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Soupe de poissons (große Portion)",
+          "preis": 17.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Soupe de poissons (kleine Portion)",
+          "preis": 12.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Assortiment de fromages (klein)",
+          "preis": 14.5,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Assortiment de fromages (groß)",
+          "preis": 19.5,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Café Gourmand",
+          "preis": 14.5,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Elsässer Flammkuchen",
+          "preis": 11.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Schinken Flammkuchen",
+          "preis": 12.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Brie de Meaux Flammkuchen",
+          "preis": 18.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Schafskäse Flammkuchen",
+          "preis": 16.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Flusskrebs Flammkuchen",
+          "preis": 18.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Räucherlachs Flammkuchen",
+          "preis": 17.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Karamellisierter Apfel Flammkuchen",
+          "preis": 12.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Croque Monsieur",
+          "preis": 14.5,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Croque Madame",
+          "preis": 16.5,
+          "kategorie": "Snack"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Augustiner im Holländischen Viertel",
@@ -7226,8 +7496,7 @@
       "speisekarten_url": "http://www.schokoladenhaus-potsdam.de/speisenkarte/",
       "quellen_urls": [
         "http://www.schokoladenhaus-potsdam.de/",
-        "http://www.schokoladenhaus-potsdam.de/speisenkarte/",
-        "http://www.schokoladenhaus-potsdam.de/weinkarte/"
+        "http://www.schokoladenhaus-potsdam.de/speisenkarte/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -7253,15 +7522,37 @@
       "speisekarten_url": "https://www.dein-alex.de/potsdam/wochenkarte?bId=1060&cHash=7675bbe39ca36066d1f718894a477eed",
       "quellen_urls": [
         "https://www.dein-alex.de/potsdam",
-        "https://www.dein-alex.de/potsdam/wochenkarte?bId=1060&cHash=7675bbe39ca36066d1f718894a477eed",
-        "https://www.dein-alex.de/potsdam/speisekarte?bId=1060&cHash=8426b221e55a2a74fcf6f74aa8531528",
-        "https://www.dein-alex.de/potsdam/getraenkekarte?bId=1060&cHash=a2acc8fb562e1b2bd82948cb5b641245",
-        "https://www.dein-alex.de/potsdam/speisekarte",
-        "https://www.dein-alex.de/potsdam/getraenkekarte"
+        "https://www.dein-alex.de/potsdam/wochenkarte?bId=1060&cHash=7675bbe39ca36066d1f718894a477eed"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 5,
+      "gerichte": [
+        {
+          "gericht": "Gamba Pfanne",
+          "preis": 12.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gamba Wrap",
+          "preis": 16.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gamba Bowl",
+          "preis": 17.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gamba Pasta",
+          "preis": 19.9,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Gamba Flammkuchen",
+          "preis": 22.9,
+          "kategorie": "Pizza"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Kaiserwetter",
@@ -7271,11 +7562,388 @@
       "quellen_urls": [
         "https://www.kaiserwetter-potsdam.de/",
         "https://www.kaiserwetter-potsdam.de/menus/",
-        "https://www.kaiserwetter-potsdam.de/wp-content/uploads/2018/speisekarte.pdf"
+        "https://www.kaiserwetter-potsdam.de/wp-content/uploads/2018/speisekarte.pdf",
+        "https://www.kaiserwetter-potsdam.de/wp-content/uploads/2025/01/KAISERWETTER_Speise-und-Getraenkekarte_10_24.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 75,
+      "gerichte": [
+        {
+          "gericht": "Griechischer Joghurt mit Granola, Honig, Zimt, frisches Obst",
+          "preis": 8.5,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Eiweißschock mit frischem Obst und Granola",
+          "preis": 9.5,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Bircher Müsli mit frischem Obst und frischen Beeren",
+          "preis": 7.9,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Chia Pudding mit Beeren, Granola in Kokosschale serviert",
+          "preis": 9.5,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Almond Milk Chia Porridge mit Blaubeeren (warm)",
+          "preis": 10.5,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Oats mit Quark, Obst und Ahornsirup",
+          "preis": 7.9,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Açai Bowl mit Granola und frischem Obst",
+          "preis": 12.9,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Espresso",
+          "preis": 2.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Espresso Macchiato",
+          "preis": 3.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Doppelter Espresso",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Doppelter Espresso Macchiato",
+          "preis": 4.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Cappuccino",
+          "preis": 3.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Flat White",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Café Crema",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Milchkaffee",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Latte Macchiato",
+          "preis": 5.4,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Latte Macchiato Caramel",
+          "preis": 5.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Latte Macchiato Vanilla",
+          "preis": 5.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Babyccino",
+          "preis": 3.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "White Chocolate Mocca",
+          "preis": 6.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Milk Chocolate Mocca",
+          "preis": 5.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Dark Chocolate Mocca",
+          "preis": 6.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Pumpkin Spice Latte mit Zimtsahne",
+          "preis": 6.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Coco Latte",
+          "preis": 5.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Chai Latte",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Chai Latte Spice",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Tucan Mango Chai",
+          "preis": 5.4,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Dirty Chai (mit Espresso)",
+          "preis": 5.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "White Chocolate",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Milk Chocolate",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Dark Chocolate",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Hot Chocolate mit Marshmallows und Sahne",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Beetroot Latte",
+          "preis": 4.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Matcha Latte",
+          "preis": 5.4,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Matchasome Premium Matcha pur",
+          "preis": 5.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Matcha Zimt Latte",
+          "preis": 5.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Matchasome Premium Matcha Kurkuma Latte",
+          "preis": 6.0,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Oatly Hafermilch, Sojamilch, laktosefreie Milch, - je -",
+          "preis": 0.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Mandelmilch, Kokosmilch",
+          "preis": 0.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Frische Minze",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Frische Minze mit Ingwer",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Ingwer mit Zitrone",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Heiße Zitrone",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Heißer Ingwer",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Earl Grey",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Darjeeling",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Grüner Tee (florale Noten)",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Waldbeere",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Chamomile",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Saison Zauber (fragen Sie bitte unser Personal nach unserem saisonalen Tee)",
+          "preis": 3.5,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Vösslauer Mineralwasser still",
+          "preis": 3.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Vösslauer Mineralwasser",
+          "preis": 7.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Vösslauer Mineralwasser",
+          "preis": 3.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Frisch gepresster Orangensaft",
+          "preis": 2.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Spinat - Ananas - Orange - Apfel",
+          "preis": 6.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Himbeer - Orange - Apfel",
+          "preis": 7.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Erdbeer - Banane - Apfel + Chiasamen",
+          "preis": 7.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Coca Cola",
+          "preis": 3.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Coca Cola Zero",
+          "preis": 3.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Proviant Bio Schorle Apfel",
+          "preis": 4.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Proviant Bio Schorle Rhabarber",
+          "preis": 4.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Proviant Bio Zitonen Limonade",
+          "preis": 4.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Proviant Bio Kirsch - Granatapfel",
+          "preis": 4.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Proviant Bio Orange - Maracuja",
+          "preis": 4.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Cucumi´s Lavendellimonade",
+          "preis": 5.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Coco Blush (Holunder, Hibiskus)",
+          "preis": 6.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Holunderlimonade",
+          "preis": 6.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Fancy Rose Lemonade",
+          "preis": 6.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Red Raspberry Mint (Frozen Raspberries, Lemon, Apple, Mint)",
+          "preis": 7.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Schlumberger Brut",
+          "preis": 8.5,
+          "kategorie": "Sekt"
+        },
+        {
+          "gericht": "Schlumberger Brut Rosé",
+          "preis": 9.5,
+          "kategorie": "Sekt"
+        },
+        {
+          "gericht": "Aperol Spritz",
+          "preis": 8.5,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Hugo",
+          "preis": 8.5,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Mimosa",
+          "preis": 8.5,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Van Nahmen Fruchtsecco Apfel - Quitte",
+          "preis": 25.0,
+          "kategorie": "Sonstiges"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Asia Gourmet",
@@ -7296,7 +7964,8 @@
       "speisekarten_url": "https://krongut-bornstedt.de/spiesekarte/",
       "quellen_urls": [
         "https://krongut-bornstedt.de/hofbaeckerei/",
-        "https://krongut-bornstedt.de/spiesekarte/"
+        "https://krongut-bornstedt.de/spiesekarte/",
+        "https://krongut-bornstedt.de/app/uploads/sites/10/2026/04/Buergerbahnhof_Speisekarte_deutsch_2026.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -7747,8 +8416,7 @@
       "speisekarten_url": "https://tamada-potsdam.de/speisekarte/",
       "quellen_urls": [
         "https://tamada-potsdam.de/",
-        "https://tamada-potsdam.de/speisekarte/",
-        "https://tamada-potsdam.de/weinkarte/"
+        "https://tamada-potsdam.de/speisekarte/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -7772,17 +8440,162 @@
       "quellen_urls": [
         "https://www.world-of-pizza.de/standorte/potsdam-am-stern/",
         "https://www.world-of-pizza.de/",
-        "https://www.world-of-pizza.de/Flyer/FlyerohnePreise/Lieferflyer_ohne%20Preise_web.pdf",
-        "https://www.world-of-pizza.de/standorte/berlin-mitte/",
-        "https://www.world-of-pizza.de/standorte/brandenburg-neustadt/",
-        "https://www.world-of-pizza.de/standorte/cottbus/",
-        "https://www.world-of-pizza.de/wop-als-arbeitgeber/",
-        "https://www.world-of-pizza.de/jobangebote/",
-        "https://www.world-of-pizza.de/karriere-und-weiterbildung/"
+        "https://www.world-of-pizza.de/Flyer/FlyerohnePreise/Lieferflyer_ohne%20Preise_web.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 30,
+      "gerichte": [
+        {
+          "gericht": "Pizza Margherita",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Bombay Spice (klein)",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Bombay Spice (groß)",
+          "preis": 12.0,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Bombay Spice (Jumbo)",
+          "preis": 14.0,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pasta Gamba",
+          "preis": 14.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Pasta Gourmet",
+          "preis": 14.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Lasagne Bologna",
+          "preis": 14.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Meine Pasta",
+          "preis": 10.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Gratin Catania",
+          "preis": 14.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Gratin Nizza",
+          "preis": 14.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Gratin Siena",
+          "preis": 14.99,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Chicken Box",
+          "preis": 12.99,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Chicken Nuggets",
+          "preis": 9.99,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Chicken Wings",
+          "preis": 12.99,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Country Potatoes",
+          "preis": 5.99,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Fingerfood Box",
+          "preis": 24.99,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Wrap Caesar",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Wrap Chicken Kebab",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Wrap Chipotle Chicken",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Wrap Gartenfrisch",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Wrap Miami",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Wrap Plant Crunchy Chick'n",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Wrap Teriyaki Chicken",
+          "preis": 9.99,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Coca-Cola (0,33 l)",
+          "preis": 2.35,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Fanta (1,00 l)",
+          "preis": 3.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Vio Mineralwasser (0,5 l)",
+          "preis": 2.25,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Monster Energy (0,5 l)",
+          "preis": 3.25,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Merlot (0,75 l)",
+          "preis": 9.99,
+          "kategorie": "Wein"
+        },
+        {
+          "gericht": "Chardonnay (0,75 l)",
+          "preis": 9.99,
+          "kategorie": "Wein"
+        },
+        {
+          "gericht": "Liebfraumilch (0,75 l)",
+          "preis": 9.99,
+          "kategorie": "Wein"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Feines Brandenburger",
@@ -8015,12 +8828,9 @@
       "name": "Tchibo",
       "website": "https://www.tchibo.de/service/storefinder/store/100000035",
       "url_versucht": "https://www.tchibo.de/service/storefinder/store/100000035",
-      "speisekarten_url": "https://www.tchibo.de/c/service?question=73927",
+      "speisekarten_url": "https://www.tchibo.de/service/storefinder/store/100000035",
       "quellen_urls": [
-        "https://www.tchibo.de/service/storefinder/store/100000035",
-        "https://www.tchibo.de/c/service?question=73927",
-        "https://www.tchibo.de/c/geschenkkarte",
-        "https://www.tchibo.de/categories/damen/unterwaesche"
+        "https://www.tchibo.de/service/storefinder/store/100000035"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -8034,9 +8844,6 @@
       "quellen_urls": [
         "https://www.nordsee.com/de/",
         "https://www.nordsee.com/de/careers-menu",
-        "https://www.nordsee.com/de/specials",
-        "https://www.nordsee.com/de/sustainability-menu",
-        "https://www.nordsee.com/de/fish-und-mehr",
         "https://www.nordsee.com/de/specials/unser_treueprogramm_mynordsee",
         "https://www.nordsee.com/de/produkte/supermarkt/brezelbackfisch",
         "https://www.nordsee.com/de/specials/nordsee_specials_",
@@ -8057,8 +8864,7 @@
       "speisekarten_url": "https://korfu-gg.de/speisekarte/",
       "quellen_urls": [
         "https://korfu-gg.de/",
-        "https://korfu-gg.de/speisekarte/",
-        "https://korfu-gg.de/weinkarte/"
+        "https://korfu-gg.de/speisekarte/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -9541,11 +10347,318 @@
       "speisekarten_url": "https://www.mido-potsdam.de/speisekarte-2",
       "quellen_urls": [
         "https://www.mido-potsdam.de",
-        "https://www.mido-potsdam.de/speisekarte-2"
+        "https://www.mido-potsdam.de/speisekarte-2",
+        "https://www.mido-potsdam.de/wp-content/uploads/2025/12/Speisekarte-DE-Potsdam-03122025.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 61,
+      "gerichte": [
+        {
+          "gericht": "Miso Suppe",
+          "preis": 3.8,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Sake Suppe",
+          "preis": 4.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Wantan Suppe",
+          "preis": 5.0,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Tom Kha Suppe (Tofu)",
+          "preis": 4.6,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Tom Kha Suppe (Hühnchen)",
+          "preis": 5.0,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Tom Kha Suppe (Süßwasser-Garnelen)",
+          "preis": 5.8,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Seetangsalat",
+          "preis": 5.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Kimchi Salat",
+          "preis": 5.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Salmon Salat",
+          "preis": 7.6,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Sashimi Salat",
+          "preis": 7.9,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Avocado Tatar (Garnelen)",
+          "preis": 7.6,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Avocado Tatar (Lachs)",
+          "preis": 7.6,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Avocado Tatar (Thunfisch)",
+          "preis": 7.9,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Mido Spezial Salat",
+          "preis": 7.9,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Mango Salat (Tofu)",
+          "preis": 7.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Mango Salat (Garnelen)",
+          "preis": 7.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Mango Salat (Hühnchen)",
+          "preis": 7.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Edamame",
+          "preis": 4.6,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Gyoza",
+          "preis": 4.8,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Mini Frühlingsrollen",
+          "preis": 4.6,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Ha Gao",
+          "preis": 5.2,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Finger Food Selection",
+          "preis": 4.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Yakitori",
+          "preis": 5.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Summer Roll (Süßwasser-Garnelen)",
+          "preis": 5.2,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Summer Roll (Hühnchen)",
+          "preis": 4.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Summer Roll (Gegrillte Lachsbauch)",
+          "preis": 4.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Summer Roll (Tofu)",
+          "preis": 4.7,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Yakitori (Hühnerspieße)",
+          "preis": 5.2,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Sweet potato",
+          "preis": 4.2,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Schottisches Lachsfilet",
+          "preis": 8.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Black Tiger Riesengarnelen",
+          "preis": 7.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Atlantic Bluefin Thunfisch",
+          "preis": 8.8,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Goya Mix mit versch. Fisch",
+          "preis": 8.8,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Vegi Udon",
+          "preis": 13.2,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Tori Udon",
+          "preis": 13.8,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Beef Udon",
+          "preis": 14.8,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Mido Spezial Udon",
+          "preis": 14.8,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Spezial WOK (Tofu)",
+          "preis": 14.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spezial WOK (gebackenes Hähnchen)",
+          "preis": 16.2,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spezial WOK (Entenbrustfilet)",
+          "preis": 16.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spezial WOK (Süßwasser-Garnelen)",
+          "preis": 16.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Sake Don",
+          "preis": 17.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Rindfleisch gebraten",
+          "preis": 15.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Pho (Rindfleisch)",
+          "preis": 13.9,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Pho (Hühnchen)",
+          "preis": 13.9,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Pho (veg. Hühnerfilet oder Seidentofu)",
+          "preis": 13.4,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Bun Bo Nam Bo",
+          "preis": 14.8,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Mido Curry (veg. Hühnerfilet oder Seidentofu)",
+          "preis": 12.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Curry (Hähnchenbrustfilet)",
+          "preis": 13.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Curry (Hähnchenbrustfilet knusprig gebacken)",
+          "preis": 14.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Curry (Entenbrustfilet)",
+          "preis": 15.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Erdnuss (veg. Hühnerfilet oder Seidentofu)",
+          "preis": 12.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Erdnuss (Hähnchenbrustfilet)",
+          "preis": 13.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Erdnuss (Hähnchenbrustfilet knusprig gebacken)",
+          "preis": 14.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Mido Erdnuss (Entenbrustfilet)",
+          "preis": 15.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Vegi Teriyaki",
+          "preis": 13.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Tori Teriyaki",
+          "preis": 14.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Sake Teriyaki",
+          "preis": 17.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Beef Teriyaki",
+          "preis": 17.4,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Duck Teriyaki",
+          "preis": 17.8,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Teriyaki with a Twist",
+          "preis": 19.9,
+          "kategorie": "Hauptgericht"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Trattoria Sapori di Sicilia",
@@ -9881,7 +10994,8 @@
       "speisekarten_url": "https://krongut-bornstedt.de/spiesekarte/",
       "quellen_urls": [
         "https://krongut-bornstedt.de/",
-        "https://krongut-bornstedt.de/spiesekarte/"
+        "https://krongut-bornstedt.de/spiesekarte/",
+        "https://krongut-bornstedt.de/app/uploads/sites/10/2026/04/Buergerbahnhof_Speisekarte_deutsch_2026.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -11544,9 +12658,7 @@
       "quellen_urls": [
         "https://www.hansottotheater.de/",
         "https://www.hansottotheater.de/karten-und-abos/",
-        "https://www.hansottotheater.de/karten-und-abos/abonnements/",
-        "https://www.hansottotheater.de/karten-und-abos/karten/",
-        "https://www.hansottotheater.de/essen-und-trinken/"
+        "https://www.hansottotheater.de/karten-und-abos/abonnements/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -11738,12 +12850,9 @@
       "quellen_urls": [
         "https://mapove.wordpress.com/",
         "https://mapove.wordpress.com/bio_solidarisch_essen_trinken_beitragen/",
-        "https://mapove.wordpress.com/vegan-meals-and-fairtrade-products/",
         "https://mapove.wordpress.com/2021/03/05/rettet-das-solidarische-gemeinschaftsprojekt-madia-mit-seinem-bio-veganen-mittagstisch/",
-        "https://mapove.wordpress.com/tag/vegan-essen/",
         "https://mapove.wordpress.com/author/gelivegan2738/",
-        "https://mapove.wordpress.com/2018/05/23/do-24-mittagessen-fr-25-kuefabendbrot/",
-        "https://mapove.wordpress.com/2_vordererraum/"
+        "https://mapove.wordpress.com/2018/05/23/do-24-mittagessen-fr-25-kuefabendbrot/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -11768,8 +12877,7 @@
       "speisekarten_url": "https://piccolo-pane.de/speisekarte/",
       "quellen_urls": [
         "https://piccolo-pane.de/",
-        "https://piccolo-pane.de/speisekarte/",
-        "https://piccolo-pane.de/getraenkekarte/"
+        "https://piccolo-pane.de/speisekarte/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -12696,8 +13804,7 @@
       "speisekarten_url": "https://belmundo.eu/Kumpir-Speisekarte/index.php/",
       "quellen_urls": [
         "https://belmundo.eu/",
-        "https://belmundo.eu/Kumpir-Speisekarte/index.php/",
-        "https://belmundo.eu/Kumpir-Speisekarte/"
+        "https://belmundo.eu/Kumpir-Speisekarte/index.php/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -13212,11 +14319,14 @@
       "name": "Mensa Am Neuen Palais",
       "website": "https://www.stwwb.de/essen/unsere-mensen/detailinfos/mensa-am-neuen-palais",
       "url_versucht": "https://www.stwwb.de/essen/unsere-mensen/detailinfos/mensa-am-neuen-palais",
-      "speisekarten_url": null,
-      "quellen_urls": [],
+      "speisekarten_url": "https://www.stwwb.de/essen/speiseplan/app",
+      "quellen_urls": [
+        "https://www.stwwb.de/essen/unsere-mensen/detailinfos/mensa-am-neuen-palais",
+        "https://www.stwwb.de/essen/speiseplan/app"
+      ],
       "anzahl_gerichte": 0,
       "gerichte": [],
-      "fehler": "homepage_nicht_erreichbar"
+      "fehler": "keine_gerichte_gefunden"
     },
     {
       "name": "Domino's",
@@ -14147,10 +15257,7 @@
       "speisekarten_url": "https://porta.de/kontaktcenter/onlinebestellung/zahlung",
       "quellen_urls": [
         "https://porta.de/gastronomie",
-        "https://porta.de/kontaktcenter/onlinebestellung/zahlung",
-        "https://porta.de/kontaktcenter/onlinebestellung/lieferung",
-        "https://porta.de/kontaktcenter/onlinebestellung/reklamation",
-        "https://porta.de/kontaktcenter/onlinebestellung/clickandcollect"
+        "https://porta.de/kontaktcenter/onlinebestellung/zahlung"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -14416,22 +15523,37 @@
       "speisekarten_url": "https://www.my-anh-potsdam.de/info.php",
       "quellen_urls": [
         "https://www.my-anh-potsdam.de/",
-        "https://www.my-anh-potsdam.de/info.php",
-        "https://www.my-anh-potsdam.de/?kat_id=76064",
-        "https://www.my-anh-potsdam.de/?kat_id=76065",
-        "https://www.my-anh-potsdam.de/?kat_id=76070",
-        "https://www.my-anh-potsdam.de/?kat_id=76067",
-        "https://www.my-anh-potsdam.de/?kat_id=76084",
-        "https://www.my-anh-potsdam.de/?kat_id=76072",
-        "https://www.my-anh-potsdam.de/?kat_id=95287",
-        "https://www.my-anh-potsdam.de/?kat_id=76074",
-        "https://www.my-anh-potsdam.de/?kat_id=76073",
-        "https://www.my-anh-potsdam.de/?kat_id=76075",
-        "https://www.my-anh-potsdam.de/?kat_id=76076"
+        "https://www.my-anh-potsdam.de/info.php"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 5,
+      "gerichte": [
+        {
+          "gericht": "Ceasar-Salat",
+          "preis": 10.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Hühner-Salat",
+          "preis": 9.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Enten-Salat",
+          "preis": 11.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Rindfleisch-Salat 1",
+          "preis": 10.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Garnelen-Salat",
+          "preis": 10.0,
+          "kategorie": "Salat"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Buena Vida Coffee Club",
@@ -14522,17 +15644,7 @@
       "speisekarten_url": "https://burgermeister.com/online-bestellen/",
       "quellen_urls": [
         "https://burgermeister.com/",
-        "https://burgermeister.com/online-bestellen/",
-        "https://burgermeister.com/menu/",
-        "https://burgermeister.com/produktion-zutaten/",
-        "https://burgermeister.com/standorte/",
-        "https://burgermeister.com/app/",
-        "https://burgermeister.com/loyalty-programm/",
-        "https://burgermeister.com/unsere-story/",
-        "https://burgermeister.com/news/",
-        "https://burgermeister.com/expansion/investoren/",
-        "https://burgermeister.com/franchise/",
-        "https://burgermeister.com/operatormodell/"
+        "https://burgermeister.com/online-bestellen/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -14586,13 +15698,11 @@
       "name": "dean&david",
       "website": "https://deananddavid.com/brandenburger-strasse-potsdam/",
       "url_versucht": "https://deananddavid.com/brandenburger-strasse-potsdam/",
-      "speisekarten_url": "https://deananddavid.com/speisen-und-getraenke/",
+      "speisekarten_url": "https://deananddavid.com/lieferservice/",
       "quellen_urls": [
         "https://deananddavid.com/brandenburger-strasse-potsdam/",
-        "https://deananddavid.com/speisen-und-getraenke/",
         "https://deananddavid.com/lieferservice/",
-        "https://deananddavid.com/en/brandenburger-strasse-potsdam/",
-        "https://deananddavid.com/shop-in-shop/"
+        "https://deananddavid.com/en/brandenburger-strasse-potsdam/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -14606,17 +15716,8 @@
       "quellen_urls": [
         "https://www.inselhotel-potsdam.de/",
         "https://www.inselhotel-potsdam.de/essen-trinken/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/restaurant/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/brunch-fruehstueck/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/kulinarischer-kalender/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/speisekarte/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/oeffnungzeiten/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/tischreservierung/",
-        "https://www.inselhotel-potsdam.de/service-kontakt/gutscheinbestellung/",
         "https://www.inselhotel-potsdam.de/wp-content/uploads/2018/07/Gerichte-werden-angericht-1024x683.jpg",
-        "https://www.inselhotel-potsdam.de/arrangements/4-geniessen-nur-3-bezahlen/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/unser-kuechenchef/kuechenteam/ramon-ronis/",
-        "https://www.inselhotel-potsdam.de/essen-trinken/unser-kuechenchef/"
+        "https://www.inselhotel-potsdam.de/essen-trinken/unser-kuechenchef/kuechenteam/ramon-ronis/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -14935,7 +16036,6 @@
       "quellen_urls": [
         "https://eiscafe-potsdam.de/",
         "https://eiscafe-potsdam.de/eis-torten/",
-        "https://eiscafe-potsdam.de/bestellung/",
         "https://eiscafe-potsdam.de/wp-content/uploads/2019/09/Torten_Seite_223-e1583347061824-1024x739.jpg"
       ],
       "anzahl_gerichte": 0,
@@ -16466,8 +17566,7 @@
       "speisekarten_url": "http://www.cafe-repin.de/home/angebot-bestellungen/",
       "quellen_urls": [
         "http://www.cafe-repin.de/",
-        "http://www.cafe-repin.de/home/angebot-bestellungen/",
-        "http://www.cafe-repin.de/home/angebot-bestellungen/unser-schmuck-handgemacht/"
+        "http://www.cafe-repin.de/home/angebot-bestellungen/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -16489,13 +17588,11 @@
       "name": "Kaffee Einstein",
       "website": "https://einsteinkaffee-bistropotsdam.de/",
       "url_versucht": "https://einsteinkaffee-bistropotsdam.de/",
-      "speisekarten_url": "https://einsteinkaffee-bistropotsdam.de/",
-      "quellen_urls": [
-        "https://einsteinkaffee-bistropotsdam.de/"
-      ],
+      "speisekarten_url": null,
+      "quellen_urls": [],
       "anzahl_gerichte": 0,
       "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "fehler": "kein_text_extrahierbar"
     },
     {
       "name": "Zanotto",
@@ -16516,8 +17613,7 @@
       "speisekarten_url": "https://www.kletterpark.info/bogenschiessen/",
       "quellen_urls": [
         "https://www.kletterpark.info/angebote/waldcafe/",
-        "https://www.kletterpark.info/bogenschiessen/",
-        "https://www.kletterpark.info/gutscheinshop/"
+        "https://www.kletterpark.info/bogenschiessen/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -16973,8 +18069,7 @@
       "speisekarten_url": "https://www.widynski-roick.de/unsere-angebote-im-ueberblick/",
       "quellen_urls": [
         "https://www.widynski-roick.de/betriebsrestaurants/landtag-brandenburg-im-stadtschloss-potsdam/",
-        "https://www.widynski-roick.de/unsere-angebote-im-ueberblick/",
-        "https://www.widynski-roick.de/unsere-geschaeftsbereiche/lieferdienste/"
+        "https://www.widynski-roick.de/unsere-angebote-im-ueberblick/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -17081,11 +18176,7 @@
       "quellen_urls": [
         "https://www.baeckereiexner.de/",
         "https://www.baeckereiexner.de/brote-broetchen/",
-        "https://www.baeckereiexner.de/kuchen-torten/",
-        "https://www.baeckereiexner.de/snacks-kaffee/",
-        "https://www.baeckereiexner.de/spezialitaeten/",
-        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf",
-        "https://www.baeckereiexner.de/formular_genusskarte/"
+        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -17851,8 +18942,7 @@
       "speisekarten_url": "https://www.restaurant-waage.de/karte",
       "quellen_urls": [
         "https://www.restaurant-waage.de/",
-        "https://www.restaurant-waage.de/karte",
-        "https://www.restaurant-waage.de/coming-soon-02"
+        "https://www.restaurant-waage.de/karte"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -17862,10 +18952,9 @@
       "name": "Restaurant Paros",
       "website": "https://paros-potsdam.de/",
       "url_versucht": "https://paros-potsdam.de/",
-      "speisekarten_url": "https://paros-potsdam.de/mittagskarte",
+      "speisekarten_url": "https://paros-potsdam.de/",
       "quellen_urls": [
-        "https://paros-potsdam.de/",
-        "https://paros-potsdam.de/mittagskarte"
+        "https://paros-potsdam.de/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -18584,14 +19673,9 @@
         "https://waldstadt.center/",
         "https://waldstadt.center/shops/asia-cuisine/",
         "https://waldstadt.center/shops/drehmoment-zweiradmeisterbetrieb/",
-        "https://waldstadt.center/shops/eckert-pressefachgeschaeft/",
         "https://waldstadt.center/shops/ernstings-family/",
         "https://waldstadt.center/shops/eurofacility-solutions-gmbh/",
-        "https://waldstadt.center/shops/haarwuchs-potsdam/",
-        "https://waldstadt.center/shops/hartna/",
-        "https://waldstadt.center/shops/hoergeraete-klaper/",
-        "https://waldstadt.center/shops/i-fitness-club/",
-        "https://waldstadt.center/shops/jannys-eis/"
+        "https://waldstadt.center/shops/hoergeraete-klaper/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -19152,8 +20236,7 @@
       "speisekarten_url": "https://www.lescyclo.de/order-online",
       "quellen_urls": [
         "https://www.lescyclo.de/",
-        "https://www.lescyclo.de/order-online",
-        "https://www.lescyclo.de/online-ordering"
+        "https://www.lescyclo.de/order-online"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -19167,12 +20250,7 @@
       "quellen_urls": [
         "https://burgercity.berlin/",
         "https://burgercity.berlin/standorte/",
-        "https://burgercity.berlin/restaurant/",
-        "https://burgercity.berlin/kontakt/",
-        "https://burgercity.berlin/portfolio_group/premium-quality/",
-        "https://burgercity.berlin/cookies/",
-        "https://burgercity.berlin/impressum/",
-        "https://burgercity.berlin/datenschutz/"
+        "https://burgercity.berlin/portfolio_group/premium-quality/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -19185,8 +20263,7 @@
       "speisekarten_url": "https://www.bakaliko-potsdam.de/Mittagskarte.html",
       "quellen_urls": [
         "https://www.bakaliko-potsdam.de/",
-        "https://www.bakaliko-potsdam.de/Mittagskarte.html",
-        "https://www.bakaliko-potsdam.de/Abendkarte.html"
+        "https://www.bakaliko-potsdam.de/Mittagskarte.html"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -19663,14 +20740,57 @@
       "speisekarten_url": "http://www.plantagenklause.de/seite/101880/spargelkarte.html",
       "quellen_urls": [
         "http://www.plantagenklause.de/",
-        "http://www.plantagenklause.de/seite/101880/spargelkarte.html",
-        "http://www.plantagenklause.de/seite/101878/mittagsgerichte.html",
-        "http://www.plantagenklause.de/seite/1013/speisekarte.html",
-        "http://www.plantagenklause.de/seite/165058/english-menue.html"
+        "http://www.plantagenklause.de/seite/101880/spargelkarte.html"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 9,
+      "gerichte": [
+        {
+          "gericht": "Spargelcremesuppe",
+          "preis": 7.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Spargel mit Petersilienkartoffeln",
+          "preis": 20.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spargel mit Schwarzwälder Schinken und Petersilienkartoffeln",
+          "preis": 24.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spargel mit gebratener Hähnchenbrust und Petersilienkartoffeln",
+          "preis": 27.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gebratenes Zanderfilet mit Spargel und Petersilienkartoffeln",
+          "preis": 29.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Paniertes Schnitzel mit Spargel und Petersilienkartoffeln",
+          "preis": 29.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Extra Portion Beelitzer Spargel",
+          "preis": 16.9,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Portion Sauce Hollandaise",
+          "preis": 4.9,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Vanilleeis mit frischen Erdbeeren und Sahne",
+          "preis": 8.5,
+          "kategorie": "Dessert"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Kantine KZV",
@@ -20987,10 +22107,7 @@
       "speisekarten_url": "https://porta.de/kontaktcenter/onlinebestellung/zahlung",
       "quellen_urls": [
         "https://porta.de/gastronomie",
-        "https://porta.de/kontaktcenter/onlinebestellung/zahlung",
-        "https://porta.de/kontaktcenter/onlinebestellung/lieferung",
-        "https://porta.de/kontaktcenter/onlinebestellung/reklamation",
-        "https://porta.de/kontaktcenter/onlinebestellung/clickandcollect"
+        "https://porta.de/kontaktcenter/onlinebestellung/zahlung"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -21016,11 +22133,7 @@
       "quellen_urls": [
         "https://www.baeckereiexner.de/",
         "https://www.baeckereiexner.de/brote-broetchen/",
-        "https://www.baeckereiexner.de/kuchen-torten/",
-        "https://www.baeckereiexner.de/snacks-kaffee/",
-        "https://www.baeckereiexner.de/spezialitaeten/",
-        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf",
-        "https://www.baeckereiexner.de/formular_genusskarte/"
+        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -21686,9 +22799,475 @@
         "https://cafe-extrablatt.de/fileadmin/pdf/Barkarte/Cafe-Extrablatt-Potsdam-Barkarte.pdf?1758273337",
         "https://cafe-extrablatt.de/fileadmin/pdf/Eiskarten/Cafe-Extrablatt-Eiskarte-PE01-Web.pdf?1774509986"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 93,
+      "gerichte": [
+        {
+          "gericht": "Tomatensuppe",
+          "preis": 6.95,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Käsesuppe",
+          "preis": 7.45,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Gulaschsuppe",
+          "preis": 7.45,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Hähnchenbrust zur Kartoffel",
+          "preis": 3.95,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Baked Potato",
+          "preis": 8.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Fitness-Teller",
+          "preis": 10.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Extracurrywurst",
+          "preis": 10.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Chicken Crispers",
+          "preis": 13.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Frühstück \"Express\"",
+          "preis": 5.25,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Rührei (Klassik)",
+          "preis": 7.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Rührei (mit Hirtenkäse)",
+          "preis": 7.95,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Rührei (mit gekochtem Schinken)",
+          "preis": 8.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Rührei (mit Bacon)",
+          "preis": 8.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Spiegeleier (Klassik)",
+          "preis": 7.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Spiegeleier (mit Bacon)",
+          "preis": 8.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Spiegeleier (mit gekochtem Schinken)",
+          "preis": 8.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Croissant (Klassik)",
+          "preis": 3.25,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Croissant (mit Butter)",
+          "preis": 3.95,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Croissant (mit Butter und Fruchtaufstrich)",
+          "preis": 5.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Croissant (mit Butter und Nutella)",
+          "preis": 5.45,
+          "kategorie": "Frühstück"
+        },
+        {
+          "gericht": "Bruschetta \"Klassik\"",
+          "preis": 6.95,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Bruschetta \"Käse\"",
+          "preis": 7.95,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Bruschetta \"Schinken\"",
+          "preis": 7.95,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Bruschetta \"Avocado\"",
+          "preis": 7.95,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Lasagne",
+          "preis": 12.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Lasagne al forno",
+          "preis": 13.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "American Wrap",
+          "preis": 10.95,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Tuna Wrap",
+          "preis": 10.95,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Italian Wrap",
+          "preis": 10.95,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Caesar's Wrap",
+          "preis": 10.95,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Fajita Wrap",
+          "preis": 10.95,
+          "kategorie": "Wrap"
+        },
+        {
+          "gericht": "Pom Fritz",
+          "preis": 5.45,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Sweet Potato Fries",
+          "preis": 6.95,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Falafeltaler",
+          "preis": 6.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Frühlingsrollen",
+          "preis": 7.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Mozzarellasticks",
+          "preis": 7.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Pizzaschnecken (Tomatensauce und Käse)",
+          "preis": 7.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Pizzaschnecken (Tomatensauce, Putensalami und Käse)",
+          "preis": 8.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Pizzaschnecken (Tomatensauce, gekochter Schinken und Käse)",
+          "preis": 8.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Pizzaschnecken (Tomatensauce, Thunfisch und Käse)",
+          "preis": 8.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Pizzaschnecken (Broccoli, Sauce à la Hollandaise und Käse)",
+          "preis": 9.45,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Spinatröllchen",
+          "preis": 8.45,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Chicken Wings",
+          "preis": 7.45,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Knusper-Garnelen",
+          "preis": 7.45,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Hähnchenbruststreifen",
+          "preis": 8.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Tintenfischringe",
+          "preis": 8.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Kleiner Salat",
+          "preis": 5.95,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Salat Vegetarian",
+          "preis": 13.45,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Salat Nizza",
+          "preis": 13.45,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Salat Livorno",
+          "preis": 14.45,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Chicken Salad",
+          "preis": 14.45,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Pizza Margherita",
+          "preis": 9.95,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Caprese",
+          "preis": 10.45,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Salami",
+          "preis": 10.95,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Tonno",
+          "preis": 11.45,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Vegetariana",
+          "preis": 10.45,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Fajita",
+          "preis": 13.95,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Korean Chicken Bowl",
+          "preis": 14.45,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Nachos mit Gedöns",
+          "preis": 12.45,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Erdbeerschnitte",
+          "preis": 5.95,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Veganer Spaghetti Bolognese",
+          "preis": 10.95,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Kürbis-Kichererbsen-Curry",
+          "preis": 12.95,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Pom Guacamole",
+          "preis": 7.95,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Caipirinha",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Mojito",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Bacardi Razz Mojito",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Himbeerinha",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Cuba Libre",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Mai Tai",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Sex on the Beach",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Piña Colada",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Touchdown",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Solero",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Tequila Sunrise",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Swimming Pool",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Holunder Twist",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Lady Killer",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Hawaii Twist",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Vanilla Sky",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Bahama Mama",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Planter's Punch",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Moscow Mule",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Canadian Mule",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Whisky Sour",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Melon Sour",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Espresso Martini",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "French Martini",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Pornstar Martini",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Chocolate Espresso Martini",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Lemon Cheesecake Martini",
+          "preis": 9.95,
+          "kategorie": "Cocktail"
+        },
+        {
+          "gericht": "Blink Blink",
+          "preis": 11.95,
+          "kategorie": "Jumbo Cocktail"
+        },
+        {
+          "gericht": "Zombie",
+          "preis": 11.95,
+          "kategorie": "Jumbo Cocktail"
+        },
+        {
+          "gericht": "Blue Island",
+          "preis": 11.95,
+          "kategorie": "Jumbo Cocktail"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Zum Starstecher",
@@ -21711,18 +23290,371 @@
         "https://losteria.net/de/restaurants/restaurant/potsdam/",
         "https://losteria.net/de/speisekarte/pizza/",
         "https://losteria.net/de/speisekarte/pizza/?restaurant=39&cHash=90eacd20f22a5d2f26a9eff5ceb4465b",
-        "https://losteria.net/de/speisekarte/menu-della-casa/",
         "https://losteria.net/de/speisekarte/antipasti/",
         "https://losteria.net/de/speisekarte/insalatone/",
         "https://losteria.net/de/speisekarte/pasta/",
         "https://losteria.net/de/speisekarte/dolci/",
-        "https://losteria.net/de/speisekarte/mittagsangebot/",
-        "https://losteria.net/de/speisekarte/bambini/",
-        "https://losteria.net/de/ueber-uns/unsere-pastamanufaktur/"
+        "https://losteria.net/de/speisekarte/mittagsangebot/"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 71,
+      "gerichte": [
+        {
+          "gericht": "Pizza Rucola",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Caprese",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Margherita",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Braccio di Ferro",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Rustica",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Parmigiana",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Funghi Freschi",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Vegetariana",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Quattro Formaggi",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Marinara Speciale",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Forza (Vegan)",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Salsiccia Piccante",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "BBQ Chicken",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Caesare e Pollo (Pizza Bianca)",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Salami",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Prosciutto",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Bò (Calzone)",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Prosciutto Crudo",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Degli Artisti",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Prosciutto e Funghi",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Hawaii",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Capricciosa",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Nduja Calabrese",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Canarino",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Frutti di Mare",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Tonno",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Gamberetti (Pizza Bianca)",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Crema di Pomodoro",
+          "preis": 5.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Bruschetta",
+          "preis": 5.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Pizza Pane",
+          "preis": 5.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Caprese Burrata",
+          "preis": 9.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Vitello Tonnato",
+          "preis": 9.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Carpaccio",
+          "preis": 9.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Panini Piccoli",
+          "preis": 5.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Antipasti della Casa",
+          "preis": 12.5,
+          "kategorie": "Vorspeise"
+        },
+        {
+          "gericht": "Insalata Mista",
+          "preis": 7.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Quinoa Avocado",
+          "preis": 9.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Campagnola",
+          "preis": 9.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Caesare",
+          "preis": 9.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Caesare mit Hähnchenbruststreifen",
+          "preis": 11.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Pollo",
+          "preis": 11.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Manzo",
+          "preis": 12.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Avocado Gamberetti",
+          "preis": 12.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Casa",
+          "preis": 12.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Mezzalune Spinaci",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Maccheroncini Pesto Genovese",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Spaghetti Pomodoro e Basilico",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Penne Arrabiata",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Risotto Funghi",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Maccheroncini Colorati",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Spaghetti Rucola e Pomodorini",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Spaghetti Aglio e Olio",
+          "preis": 10.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Lasagne",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Orecchiette di Manzo al Limone",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Spaghetti Carbonara",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Penne Pollo Aurora",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Tortelloni Prosciutto e Panna",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Spaghetti Chitarra Ragù alla Bolognese",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Zoodles Gamberetti",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Conchiglie di Fiume",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Gnocchi Gamberetti",
+          "preis": 12.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Piccolo Dolce",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "L'Osteria Gelato",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Spaghetti Eis",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Tartufo",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Panna Cotta",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Crema di Fragola al Mascarpone",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Tiramisù",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Soufflé al Cioccolato",
+          "preis": 5.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Pizza Caprese",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza FUNGHI FRESCHI",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "World of Pizza Potsdam-West",
@@ -23019,16 +24951,15 @@
       "name": "Bobbys Pizza",
       "website": "https://bobbys-pizza-babelsberg.com",
       "url_versucht": "https://bobbys-pizza-babelsberg.com",
-      "speisekarten_url": "https://bobbys-pizza-babelsberg.com/cdn-cgi/content?id=vcD7hZ9VqdLWRFNTbvvhn0Tgb8ZqM_8WAOihBOfhFWA-1777356353.5906188-1.0.1.1-Qy16pJ0NiiEYhW6FkSLipb3wzqM_OL5xxe.w0ncNKno",
+      "speisekarten_url": "https://bobbys-pizza-babelsberg.com/cdn-cgi/content?id=S4zBSf3QlYEFrJT8Srh5FAltM6mihnbikqJn21dFEh0-1777379727.8832223-1.0.1.1-sNDtkxtOKL54k9zDzDbqk6sNhqTNbBF4Ah_l42Uis0s",
       "quellen_urls": [
         "https://bobbys-pizza-babelsberg.com",
-        "https://bobbys-pizza-babelsberg.com/cdn-cgi/content?id=vcD7hZ9VqdLWRFNTbvvhn0Tgb8ZqM_8WAOihBOfhFWA-1777356353.5906188-1.0.1.1-Qy16pJ0NiiEYhW6FkSLipb3wzqM_OL5xxe.w0ncNKno",
+        "https://bobbys-pizza-babelsberg.com/cdn-cgi/content?id=S4zBSf3QlYEFrJT8Srh5FAltM6mihnbikqJn21dFEh0-1777379727.8832223-1.0.1.1-sNDtkxtOKL54k9zDzDbqk6sNhqTNbBF4Ah_l42Uis0s",
         "https://bobbys-pizza-babelsberg.com/bobbys-pizza",
-        "https://bobbys-pizza-babelsberg.com/bobbys-pizza?scroll-to-menu=true",
-        "https://bobbys-pizza-babelsberg.com/bobbys-pizza/contact",
         "https://bobbys-pizza-babelsberg.com/bobbys-pizza/delivery",
         "https://bobbys-pizza-babelsberg.com/bobbys-pizza?p=6961576",
-        "https://bobbys-pizza-babelsberg.com/bobbys-pizza?p=6961512"
+        "https://bobbys-pizza-babelsberg.com/bobbys-pizza?p=6961512",
+        "https://bobbys-pizza-babelsberg.com/bobbys-pizza?p=6961566"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -23069,10 +25000,7 @@
       "speisekarten_url": "https://www.golmdoenerhaus-potsdam.de/terms",
       "quellen_urls": [
         "https://www.golmdoenerhaus-potsdam.de/",
-        "https://www.golmdoenerhaus-potsdam.de/terms",
-        "https://www.golmdoenerhaus-potsdam.de/privacystatement",
-        "https://www.golmdoenerhaus-potsdam.de/cookiestatement",
-        "https://www.golmdoenerhaus-potsdam.de/colofon"
+        "https://www.golmdoenerhaus-potsdam.de/terms"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -23779,10 +25707,7 @@
       "quellen_urls": [
         "https://www.pizzapipasa.de/",
         "https://www.pizzapipasa.de/dataPrivacy",
-        "https://www.pizzapipasa.de/imprint",
-        "https://www.pizzapipasa.de/outdoor-delivery",
-        "https://www.pizzapipasa.de/customerdata/forgotPassword",
-        "https://www.pizzapipasa.de/storedata/selectStore?store_id=&deliveryarea_id=0"
+        "https://www.pizzapipasa.de/outdoor-delivery"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -25357,11 +27282,7 @@
       "speisekarten_url": "https://www.ciao-bella.de/restaurants/hamburg-hamburger-meile/",
       "quellen_urls": [
         "https://www.ciao-bella.de/restaurants/potsdam-stern-center/",
-        "https://www.ciao-bella.de/restaurants/hamburg-hamburger-meile/",
-        "https://www.ciao-bella.de/restaurants/luebeck-luv-shopping/",
-        "https://www.ciao-bella.de/restaurants/norderstedt-herold-center/",
-        "https://www.ciao-bella.de/online-bestellen/",
-        "https://www.ciao-bella.de/ciao-bella-online-bestellung/"
+        "https://www.ciao-bella.de/restaurants/hamburg-hamburger-meile/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -25409,18 +27330,7 @@
       "speisekarten_url": "https://www.ruffsburger.de/",
       "quellen_urls": [
         "https://www.ruffsburger.de/delivery-potsdam-babelsberg/",
-        "https://www.ruffsburger.de/",
-        "https://www.ruffsburger.de/standort/",
-        "https://www.ruffsburger.de/restaurant-ansbach/",
-        "https://www.ruffsburger.de/delivery-dresden-lobtau/",
-        "https://www.ruffsburger.de/imbiss-duesseldorf-altstadt/",
-        "https://www.ruffsburger.de/restaurant-therme-erding/",
-        "https://www.ruffsburger.de/restaurant-erding-cineplex/",
-        "https://www.ruffsburger.de/delivery-erfurt-ilversgehofen/",
-        "https://www.ruffsburger.de/restaurant-essen/",
-        "https://www.ruffsburger.de/burger-house-restaurant-freising/",
-        "https://www.ruffsburger.de/restaurant-haar/",
-        "https://www.ruffsburger.de/delivery-halle-saale/"
+        "https://www.ruffsburger.de/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -26280,10 +28190,7 @@
       "speisekarten_url": "https://www.biosphaere-potsdam.de/dein-besuch/shop/",
       "quellen_urls": [
         "https://www.biosphaere-potsdam.de/buchbare-angebote/gastronomie/restaurant-urwaldblick/",
-        "https://www.biosphaere-potsdam.de/dein-besuch/shop/",
-        "https://www.biosphaere-potsdam.de/lernen-wissen/fuehrungen-workshop/",
-        "https://www.biosphaere-potsdam.de/dein-besuch/gastronomie/fruehstueck-unter-palmen/",
-        "https://www.biosphaere-potsdam.de/dein-besuch/gastronomie/fruehstuecksbuffet/"
+        "https://www.biosphaere-potsdam.de/dein-besuch/shop/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -26297,11 +28204,7 @@
       "quellen_urls": [
         "https://www.baeckereiexner.de/",
         "https://www.baeckereiexner.de/brote-broetchen/",
-        "https://www.baeckereiexner.de/kuchen-torten/",
-        "https://www.baeckereiexner.de/snacks-kaffee/",
-        "https://www.baeckereiexner.de/spezialitaeten/",
-        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf",
-        "https://www.baeckereiexner.de/formular_genusskarte/"
+        "https://www.baeckereiexner.de/wp-content/uploads/2026/01/Formular_Genusskarte.pdf"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -26493,8 +28396,7 @@
       "speisekarten_url": "https://www.mmaah.de/menu",
       "quellen_urls": [
         "https://www.mmaah.de/locations",
-        "https://www.mmaah.de/menu",
-        "https://www.mmaah.de/bestellung"
+        "https://www.mmaah.de/menu"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -27643,12 +29545,7 @@
       "speisekarten_url": "http://www.viktoriagarten-potsdam.de/Produkte/Buecher/Neuerscheinungen/Jetzt-vorbestellen/",
       "quellen_urls": [
         "http://www.viktoriagarten-potsdam.de/",
-        "http://www.viktoriagarten-potsdam.de/Produkte/Buecher/Neuerscheinungen/Jetzt-vorbestellen/",
-        "http://www.viktoriagarten-potsdam.de/Produkte/Buecher/Schulbuecher-Lernhilfen/Lernhilfen-nach-Bundeslaendern/Hessen/",
-        "http://www.viktoriagarten-potsdam.de/Produkte/Kalender/Fotokalender/Essen-Trinken/",
-        "http://www.viktoriagarten-potsdam.de/Produkte/Kalender/Postkartenkalender/",
-        "http://www.viktoriagarten-potsdam.de/Hilfe/Bestellung/",
-        "http://www.viktoriagarten-potsdam.de/Produkt/Benjamin-Wood/Der-Krabbenfischer_lid_55320899.html"
+        "http://www.viktoriagarten-potsdam.de/Produkte/Buecher/Neuerscheinungen/Jetzt-vorbestellen/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -28870,17 +30767,7 @@
       "quellen_urls": [
         "https://www.bahnhofspassagen-potsdam.de/shops/divan_grill",
         "https://www.bahnhofspassagen-potsdam.de/shops",
-        "https://www.bahnhofspassagen-potsdam.de/branchen/shopping",
-        "https://www.bahnhofspassagen-potsdam.de/fotos/shops/divan_grill/1",
-        "https://www.bahnhofspassagen-potsdam.de/shops/bio_company",
-        "https://www.bahnhofspassagen-potsdam.de/shops/deichmann",
-        "https://www.bahnhofspassagen-potsdam.de/shops/depot",
-        "https://www.bahnhofspassagen-potsdam.de/shops/dm-drogerie_markt",
-        "https://www.bahnhofspassagen-potsdam.de/shops/ikea_planungsstudio",
-        "https://www.bahnhofspassagen-potsdam.de/shops/kaufland",
-        "https://www.bahnhofspassagen-potsdam.de/shops/media_markt",
-        "https://www.bahnhofspassagen-potsdam.de/shops/pinocchio_spielwaren",
-        "https://www.bahnhofspassagen-potsdam.de/shops/uci_potsdam_luxe"
+        "https://www.bahnhofspassagen-potsdam.de/fotos/shops/divan_grill/1"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -28922,12 +30809,9 @@
       "name": "Espresso House",
       "website": "https://de.espressohouse.com/find-us/potsdam-bahnhof",
       "url_versucht": "https://de.espressohouse.com/find-us/potsdam-bahnhof",
-      "speisekarten_url": "https://de.espressohouse.com/essen-und-trinken",
+      "speisekarten_url": "https://de.espressohouse.com/find-us/potsdam-bahnhof",
       "quellen_urls": [
-        "https://de.espressohouse.com/find-us/potsdam-bahnhof",
-        "https://de.espressohouse.com/essen-und-trinken",
-        "https://de.espressohouse.com/lieferdienst",
-        "https://de.espressohouse.com/geschenkgutscheine"
+        "https://de.espressohouse.com/find-us/potsdam-bahnhof"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -28957,17 +30841,7 @@
       "quellen_urls": [
         "https://www.bahnhofspassagen-potsdam.de/shops/culinasia_potsdam_-_asian_fine_food",
         "https://www.bahnhofspassagen-potsdam.de/shops",
-        "https://www.bahnhofspassagen-potsdam.de/branchen/shopping",
-        "https://www.bahnhofspassagen-potsdam.de/fotos/shops/culinasia_potsdam_-_asian_fine_food/1",
-        "https://www.bahnhofspassagen-potsdam.de/shops/bio_company",
-        "https://www.bahnhofspassagen-potsdam.de/shops/deichmann",
-        "https://www.bahnhofspassagen-potsdam.de/shops/depot",
-        "https://www.bahnhofspassagen-potsdam.de/shops/dm-drogerie_markt",
-        "https://www.bahnhofspassagen-potsdam.de/shops/ikea_planungsstudio",
-        "https://www.bahnhofspassagen-potsdam.de/shops/kaufland",
-        "https://www.bahnhofspassagen-potsdam.de/shops/media_markt",
-        "https://www.bahnhofspassagen-potsdam.de/shops/pinocchio_spielwaren",
-        "https://www.bahnhofspassagen-potsdam.de/shops/uci_potsdam_luxe"
+        "https://www.bahnhofspassagen-potsdam.de/fotos/shops/culinasia_potsdam_-_asian_fine_food/1"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -29176,8 +31050,7 @@
       "speisekarten_url": "https://www.widynski-roick.de/unsere-angebote-im-ueberblick/",
       "quellen_urls": [
         "https://www.widynski-roick.de/betriebsrestaurants/landesverwaltungszentrum-steinstrasse/",
-        "https://www.widynski-roick.de/unsere-angebote-im-ueberblick/",
-        "https://www.widynski-roick.de/unsere-geschaeftsbereiche/lieferdienste/"
+        "https://www.widynski-roick.de/unsere-angebote-im-ueberblick/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -29929,14 +31802,7 @@
       "speisekarten_url": "https://www.diealtegarage.de/getränkekarte/",
       "quellen_urls": [
         "https://www.diealtegarage.de/",
-        "https://www.diealtegarage.de/getränkekarte/",
-        "https://www.diealtegarage.de/getränkekarte/bier/",
-        "https://www.diealtegarage.de/getränkekarte/wein-co/",
-        "https://www.diealtegarage.de/getränkekarte/spirituosen/",
-        "https://www.diealtegarage.de/getränkekarte/whisky-karte/",
-        "https://www.diealtegarage.de/getränkekarte/longdrinks-cocktails/",
-        "https://www.diealtegarage.de/getränkekarte/alkoholfreies/",
-        "https://www.diealtegarage.de/getränkekarte/kaffee-heißgetränke/"
+        "https://www.diealtegarage.de/getränkekarte/"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -30555,14 +32421,7 @@
       "speisekarten_url": "https://www.potsdamer-sport-union.de/seite/822909/psu-fanshop.html",
       "quellen_urls": [
         "https://www.potsdamer-sport-union.de/seite/485042/vereinsgastst%C3%A4tte.html",
-        "https://www.potsdamer-sport-union.de/seite/822909/psu-fanshop.html",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=146506",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=146505",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=227297",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=146523",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=146526",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=143042",
-        "https://www.potsdamer-sport-union.de/verzeichnis/visitenkarte.php?mandat=143040"
+        "https://www.potsdamer-sport-union.de/seite/822909/psu-fanshop.html"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -30572,13 +32431,75 @@
       "name": "Kleines See-Restaurant",
       "website": "https://kleines-see-restaurant.de/",
       "url_versucht": "https://kleines-see-restaurant.de/",
-      "speisekarten_url": "https://kleines-see-restaurant.de/",
+      "speisekarten_url": "https://kleines-see-restaurant.de/wp-content/uploads/2026/04/Speisekarte-See.pdf",
       "quellen_urls": [
-        "https://kleines-see-restaurant.de/"
+        "https://kleines-see-restaurant.de/",
+        "https://kleines-see-restaurant.de/wp-content/uploads/2026/04/Speisekarte-See.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 12,
+      "gerichte": [
+        {
+          "gericht": "Kalbsleber geschnetzelt, mit Champignon und Zwiebeln, dazu Bratkartoffeln",
+          "preis": 18.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Argentinisches Hüftsteak vom Rind mit geschrotetem Pfeffer und grünen Bohnen, dazu Bratkartoffeln",
+          "preis": 23.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Grillteller vom Rind, Schwein und Hähnchen mit grünen Bohnen, Kräuterbutter, dazu Bratkartoffeln",
+          "preis": 19.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Partnergrillteller (für 2 Personen) Rind, Schwein, Hähnchenbrust, Gemüse, Kräuterbutter, dazu Bratkartoffeln",
+          "preis": 43.0,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Hähnchenbrustfilet mit Champignonsahnesauce, dazu Kroketten",
+          "preis": 17.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Hähnchenbrustfilet mit Gorgonzolasauce, dazu Kroketten",
+          "preis": 18.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Schweinesteak mit grünen Bohnen, dazu Bratkartoffeln",
+          "preis": 17.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Schweineschnitzel mit Spiegelei und Bratkartoffeln",
+          "preis": 18.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Cordon Bleu Schnitzel gefüllt mit Vorderschinken und Käse, mit Champignonsahnesauce, dazu Pommes Frites",
+          "preis": 19.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Vegetarische Pfanne verschiedene Gemüsesorten, dazu Kroketten",
+          "preis": 15.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Champignonsahnesauce",
+          "preis": 4.5,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Gorgonzolasauce",
+          "preis": 4.8,
+          "kategorie": "Sonstiges"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "La Stellino",
@@ -30876,10 +32797,7 @@
         "https://speisekartenweb.de/restaurants/potsdam/am-%C3%9Cbergang-136531?utm_source=google_profile&utm_medium=google_profile&utm_campaign=admin",
         "https://speisekartenweb.de/inhaber_neu/",
         "https://speisekartenweb.de/restaurants/potsdam",
-        "https://speisekartenweb.de/restaurants/potsdam/restaurant-hinzenbergklause-136532",
-        "https://speisekartenweb.de/restaurants/osnabr%C3%BCck/buddha-bowl---osnabr%C3%BCck-392",
-        "https://speisekartenweb.de/restaurants/bayreuth/wagaya-bayreuth-12272",
-        "https://speisekartenweb.de/restaurants/aalen/kokono-aalen-13153"
+        "https://speisekartenweb.de/restaurants/potsdam/restaurant-hinzenbergklause-136532"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -30901,13 +32819,265 @@
       "name": "FreiluftbarZeppelin",
       "website": "https://www.kongresshotel-potsdam.de/gastronomie-am-see/freiluftbar-zeppelin/",
       "url_versucht": "https://www.kongresshotel-potsdam.de/gastronomie-am-see/freiluftbar-zeppelin/",
-      "speisekarten_url": "https://www.kongresshotel-potsdam.de/gastronomie-am-see/freiluftbar-zeppelin/",
+      "speisekarten_url": "https://www.kongresshotel-potsdam.de/wp-content/uploads/2026/04/Speise-Getraenke-Eiskarte-FLB-2026.pdf?x55366",
       "quellen_urls": [
-        "https://www.kongresshotel-potsdam.de/gastronomie-am-see/freiluftbar-zeppelin/"
+        "https://www.kongresshotel-potsdam.de/gastronomie-am-see/freiluftbar-zeppelin/",
+        "https://www.kongresshotel-potsdam.de/wp-content/uploads/2026/04/Speise-Getraenke-Eiskarte-FLB-2026.pdf?x55366"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 50,
+      "gerichte": [
+        {
+          "gericht": "Lichtenauer Gourmet medium",
+          "preis": 3.1,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Lichtenauer Gourmet still",
+          "preis": 3.1,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Lichtenauer Gourmet 0,75 l",
+          "preis": 8.1,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Coca Cola 0,33 l",
+          "preis": 4.2,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Saftschorle aus dem Hause Rauch 0,50 l",
+          "preis": 5.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Hausgemachte Limonade Basilikum 0,40 l",
+          "preis": 5.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Hausgemachte Limonade Heidelbeere 0,40 l",
+          "preis": 5.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Hausgemachter Eistee 0,40 l",
+          "preis": 5.9,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Pott Kaffee",
+          "preis": 4.3,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Doppelter Espresso",
+          "preis": 4.6,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Milchkaffee",
+          "preis": 4.6,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Cappuccino",
+          "preis": 4.2,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Latte Macchiato",
+          "preis": 4.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Heiße Schokolade",
+          "preis": 3.9,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Tee",
+          "preis": 3.4,
+          "kategorie": "Heißgetränk"
+        },
+        {
+          "gericht": "Lübzer Pils 0,30 l",
+          "preis": 4.3,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Lübzer Pils 0,50 l",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Alster 0,30 l",
+          "preis": 4.3,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Alster 0,50 l",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Erdinger Hefeweizen hell 0,50 l",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Erdinger Bananenweizen 0,50 l",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Erdinger Hefeweizen alkoholfrei 0,50 l",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Lübzer alkoholfrei 0,33 l",
+          "preis": 4.3,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Lübzer Naturradler alkoholfrei 0,50 l",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Weißburgunder Langenwalter 0,20 l",
+          "preis": 8.6,
+          "kategorie": "Wein"
+        },
+        {
+          "gericht": "Cabernet Sauvignon Langenwalter 0,20 l",
+          "preis": 8.6,
+          "kategorie": "Wein"
+        },
+        {
+          "gericht": "Weißweinschorle 0,20 l",
+          "preis": 5.9,
+          "kategorie": "Wein"
+        },
+        {
+          "gericht": "Prosecco Mionetto Vivo blu 0,10 l",
+          "preis": 5.1,
+          "kategorie": "Aperitif"
+        },
+        {
+          "gericht": "Gurken Spritz alkoholfrei 0,20 l",
+          "preis": 8.5,
+          "kategorie": "Aperitif"
+        },
+        {
+          "gericht": "Storck Berry 0,20 l",
+          "preis": 9.5,
+          "kategorie": "Aperitif"
+        },
+        {
+          "gericht": "Lillet Wildberry 0,20 l",
+          "preis": 9.5,
+          "kategorie": "Aperitif"
+        },
+        {
+          "gericht": "Aperol Spritz 0,20 l",
+          "preis": 9.5,
+          "kategorie": "Aperitif"
+        },
+        {
+          "gericht": "Hugo 0,20 l",
+          "preis": 9.5,
+          "kategorie": "Aperitif"
+        },
+        {
+          "gericht": "Cuba Libre 0,40 l",
+          "preis": 9.5,
+          "kategorie": "Longdrink"
+        },
+        {
+          "gericht": "Gin Sul Tonic 0,40 l",
+          "preis": 10.5,
+          "kategorie": "Longdrink"
+        },
+        {
+          "gericht": "Gin Tonic Zero /Alkoholfrei 0,40 l",
+          "preis": 8.5,
+          "kategorie": "Longdrink"
+        },
+        {
+          "gericht": "Jägermeister 4 cl",
+          "preis": 5.4,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Vodka 4 cl",
+          "preis": 5.4,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Täglich wechselndes Angebot an Blechkuchen",
+          "preis": 4.2,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Täglich wechselndes Angebot an Torten",
+          "preis": 4.9,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Portion Sahne",
+          "preis": 1.8,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Eis to go im nachhaltigen 120ml Becher",
+          "preis": 4.2,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Eiskaffee",
+          "preis": 5.9,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Eisschokolade",
+          "preis": 5.9,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Erdnüsse",
+          "preis": 1.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Brezel gefüllt mit Butter",
+          "preis": 3.5,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Flammkuchen Elsässer Art",
+          "preis": 11.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Flammkuchen Lothringer Art",
+          "preis": 11.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Flammkuchen Süße Art",
+          "preis": 11.9,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Genusstipp dazu 1 Kugel Vanille",
+          "preis": 2.0,
+          "kategorie": "Beilage"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Biergarten Plantagenklause",
@@ -30916,14 +33086,57 @@
       "speisekarten_url": "http://www.plantagenklause.de/seite/101880/spargelkarte.html",
       "quellen_urls": [
         "http://www.plantagenklause.de/",
-        "http://www.plantagenklause.de/seite/101880/spargelkarte.html",
-        "http://www.plantagenklause.de/seite/101878/mittagsgerichte.html",
-        "http://www.plantagenklause.de/seite/1013/speisekarte.html",
-        "http://www.plantagenklause.de/seite/165058/english-menue.html"
+        "http://www.plantagenklause.de/seite/101880/spargelkarte.html"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 9,
+      "gerichte": [
+        {
+          "gericht": "Spargelcremesuppe",
+          "preis": 7.5,
+          "kategorie": "Suppe"
+        },
+        {
+          "gericht": "Spargel mit Petersilienkartoffeln",
+          "preis": 20.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spargel mit Schwarzwälder Schinken und Petersilienkartoffeln",
+          "preis": 24.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Spargel mit gebratener Hähnchenbrust und Petersilienkartoffeln",
+          "preis": 27.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Gebratenes Zanderfilet mit Spargel und Petersilienkartoffeln",
+          "preis": 29.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Paniertes Schnitzel mit Spargel und Petersilienkartoffeln",
+          "preis": 29.9,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Extra Portion Beelitzer Spargel",
+          "preis": 16.9,
+          "kategorie": "Beilage"
+        },
+        {
+          "gericht": "Portion Sauce Hollandaise",
+          "preis": 4.9,
+          "kategorie": "Sonstiges"
+        },
+        {
+          "gericht": "Vanilleeis mit frischen Erdbeeren und Sahne",
+          "preis": 8.5,
+          "kategorie": "Dessert"
+        }
+      ],
+      "fehler": null
     },
     {
       "name": "Dönerwerk",
@@ -31358,10 +33571,7 @@
       "speisekarten_url": "https://www.icafe-potsdam.de/footer-menue-deutsch/service/datenschutz.html",
       "quellen_urls": [
         "https://www.icafe-potsdam.de/",
-        "https://www.icafe-potsdam.de/footer-menue-deutsch/service/datenschutz.html",
-        "https://www.icafe-potsdam.de/footer-menue-deutsch/service/barrierefreiheitserklaerung.html",
-        "https://www.icafe-potsdam.de/footer-menue-deutsch/service/impressum.html",
-        "https://www.icafe-potsdam.de/footer-menue-deutsch/informieren/leistungen-von-a-z.html"
+        "https://www.icafe-potsdam.de/footer-menue-deutsch/service/datenschutz.html"
       ],
       "anzahl_gerichte": 0,
       "gerichte": [],
@@ -31517,11 +33727,235 @@
       "speisekarten_url": "https://www.la-lupo.de/menu.html",
       "quellen_urls": [
         "https://www.la-lupo.de/",
-        "https://www.la-lupo.de/menu.html"
+        "https://www.la-lupo.de/menu.html",
+        "https://www.la-lupo.de/downloads/La_Lupo_Menu%20Februar%2026.pdf",
+        "https://www.la-lupo.de/downloads/ristrante_lalupo_dessertkarte.pdf",
+        "https://www.la-lupo.de/downloads/neue%20weinkarte%2026.pdf"
       ],
-      "anzahl_gerichte": 0,
-      "gerichte": [],
-      "fehler": "keine_gerichte_gefunden"
+      "anzahl_gerichte": 44,
+      "gerichte": [
+        {
+          "gericht": "Insalata Lupo",
+          "preis": 17.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata di Valerianella, Mela, Noci e Parmigiano",
+          "preis": 13.0,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Tonno",
+          "preis": 12.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Insalata Mista",
+          "preis": 8.5,
+          "kategorie": "Salat"
+        },
+        {
+          "gericht": "Tagliatelle con Salmone e Crema di Zucchine",
+          "preis": 18.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Rigatoni all'Arrabbiata",
+          "preis": 13.0,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Rigatoni al Ragù Napoletano",
+          "preis": 15.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Linguini ai Gamberoni",
+          "preis": 24.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Tagliolini Cacio e Pepe",
+          "preis": 16.5,
+          "kategorie": "Pasta"
+        },
+        {
+          "gericht": "Salmone alla Griglia",
+          "preis": 26.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Filetto di Maiale Glassato al Miele",
+          "preis": 21.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Suprema di Pollo alla Griglia",
+          "preis": 24.5,
+          "kategorie": "Hauptgericht"
+        },
+        {
+          "gericht": "Pizza Margherita",
+          "preis": 8.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Salami",
+          "preis": 10.5,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Pizza Tonno",
+          "preis": 11.0,
+          "kategorie": "Pizza"
+        },
+        {
+          "gericht": "Focaccia",
+          "preis": 7.5,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Focaccia Bruschetta",
+          "preis": 10.5,
+          "kategorie": "Snack"
+        },
+        {
+          "gericht": "Mousse au Chocolat",
+          "preis": 8.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Mono Cremoso al Cioccolato",
+          "preis": 8.5,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Tiramisù",
+          "preis": 8.0,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Panna Cotta",
+          "preis": 8.0,
+          "kategorie": "Dessert"
+        },
+        {
+          "gericht": "Cola",
+          "preis": 3.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Fanta",
+          "preis": 3.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Sprite",
+          "preis": 3.5,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "San Pellegrino",
+          "preis": 7.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Acqua Panna",
+          "preis": 7.0,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Bitter Lemon",
+          "preis": 3.8,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Tonic Water",
+          "preis": 3.8,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Ginger Ale",
+          "preis": 3.8,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Apfelsaft",
+          "preis": 3.8,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Orangensaft",
+          "preis": 3.8,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "Apfelschorle",
+          "preis": 3.8,
+          "kategorie": "Kaltgetränk"
+        },
+        {
+          "gericht": "König Pilsener vom Fass",
+          "preis": 4.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Hefeweizenbier Benedektiner",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Hefe Benediktiner Alkoholfrei",
+          "preis": 5.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "König Pilsner -Alkoholfrei",
+          "preis": 4.5,
+          "kategorie": "Bier"
+        },
+        {
+          "gericht": "Vodka",
+          "preis": 3.5,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Whiskey Jack Daniel's",
+          "preis": 11.0,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Chivas Regal 12 Years",
+          "preis": 11.0,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Bushmills 1608",
+          "preis": 12.0,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Gordon's Gin",
+          "preis": 9.0,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Hendrick's Gin",
+          "preis": 12.0,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Monkey 47 Gin",
+          "preis": 12.0,
+          "kategorie": "Spirituose"
+        },
+        {
+          "gericht": "Ron Zacapa Etiqueta Negra",
+          "preis": 14.0,
+          "kategorie": "Spirituose"
+        }
+      ],
+      "fehler": null
     }
   ]
 }

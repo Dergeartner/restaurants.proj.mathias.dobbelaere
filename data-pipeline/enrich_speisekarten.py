@@ -354,21 +354,42 @@ def collect_all_pages_text(homepage_html: str, homepage_url: str) -> tuple[str, 
         pages.append((homepage_url, homepage_text))
 
     sub_urls = find_speisekarten_urls(homepage_html, homepage_url)
+    visited: set[str] = {homepage_url}
+
     for sub_url in sub_urls:
         if sum(len(t) for _, t in pages) >= MAX_HTML_CHARS_TOTAL:
             break
+        if sub_url in visited:
+            continue
+        visited.add(sub_url)
+
         # PDF-Support: wenn .pdf, dann via pypdf
         if is_pdf_url(sub_url):
             pdf_text = fetch_pdf_text(sub_url)
             if pdf_text:
                 pages.append((sub_url, pdf_text[:MAX_HTML_CHARS_PER_PAGE]))
             continue
+
         sub_html = fetch_html(sub_url)
         if not sub_html:
             continue
         sub_text = extract_text_block(sub_html)
         if sub_text:
             pages.append((sub_url, sub_text))
+
+        # REKURSIVE Suche: in dieser Sub-Page nach weiteren Speisekarten-Links
+        # Wichtig für Sites wo PDF erst auf der speisekarte.html verlinkt ist (Juliette)
+        nested_urls = find_speisekarten_urls(sub_html, sub_url)
+        for nested in nested_urls:
+            if nested in visited:
+                continue
+            if sum(len(t) for _, t in pages) >= MAX_HTML_CHARS_TOTAL:
+                break
+            visited.add(nested)
+            if is_pdf_url(nested):
+                pdf_text = fetch_pdf_text(nested)
+                if pdf_text:
+                    pages.append((nested, pdf_text[:MAX_HTML_CHARS_PER_PAGE]))
 
     # Texte mit URL-Headern verkettet zusammenführen, hartes Limit
     chunks = []
