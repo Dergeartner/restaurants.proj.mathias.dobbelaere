@@ -114,6 +114,7 @@ export default function Page() {
 
       <FilterBar
         restaurants={data.restaurants}
+        filteredRestaurants={filtered}
         filters={filters}
         onChange={setFilters}
         totalShown={filtered.length}

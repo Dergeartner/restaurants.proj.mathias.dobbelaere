@@ -1,6 +1,8 @@
 "use client";
 
+import { Download, FileSpreadsheet } from "lucide-react";
 import type { Restaurant } from "@/app/types";
+import { exportAll, exportFiltered } from "@/lib/excel-export";
 
 export type Filters = {
   search: string;
@@ -16,11 +18,37 @@ type Props = {
   filters: Filters;
   onChange: (next: Filters) => void;
   totalShown: number;
+  filteredRestaurants?: Restaurant[];
 };
 
-export function FilterBar({ restaurants, filters, onChange, totalShown }: Props) {
+export function FilterBar({
+  restaurants,
+  filters,
+  onChange,
+  totalShown,
+  filteredRestaurants,
+}: Props) {
   const kategorien = uniqueSorted(restaurants.map((r) => r.kategorie));
   const stadtteile = uniqueSorted(restaurants.map((r) => r.stadtteil));
+
+  const isFiltered =
+    filters.search !== "" ||
+    filters.kategorie !== "" ||
+    filters.stadtteil !== "" ||
+    filters.hotOnly ||
+    filters.akquiseOnly ||
+    filters.lieferandoOnly;
+
+  const filterDescription = describeFilters(filters);
+
+  const handleExportFiltered = () => {
+    const list = filteredRestaurants ?? restaurants;
+    void exportFiltered(list, filterDescription || "Alle Restaurants");
+  };
+
+  const handleExportAll = () => {
+    void exportAll(restaurants);
+  };
 
   return (
     <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm">
@@ -77,18 +105,34 @@ export function FilterBar({ restaurants, filters, onChange, totalShown }: Props)
           onChange={(v) => onChange({ ...filters, lieferandoOnly: v })}
           variant="lieferando"
         />
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex flex-wrap items-center gap-3">
           <span className="text-sm text-neutral-600">
             <span className="font-semibold tabular-nums">{totalShown}</span>{" "}
             Treffer
           </span>
-          <a
-            href="/partnerliste_potsdam.xlsx"
-            download
-            className="rounded bg-lieferando px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-lieferando-dark"
+          <button
+            type="button"
+            onClick={handleExportFiltered}
+            disabled={totalShown === 0}
+            className="inline-flex items-center gap-1.5 rounded bg-lieferando px-3 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-lieferando-dark disabled:cursor-not-allowed disabled:opacity-50"
+            title={
+              isFiltered
+                ? `Excel mit aktuellen ${totalShown} Treffern (${filterDescription})`
+                : `Excel mit allen ${totalShown} Treffern`
+            }
           >
-            Excel herunterladen
-          </a>
+            <Download className="h-4 w-4" />
+            {isFiltered ? `Gefilterte Excel (${totalShown})` : "Excel"}
+          </button>
+          <button
+            type="button"
+            onClick={handleExportAll}
+            className="inline-flex items-center gap-1.5 rounded border border-lieferando bg-white px-3 py-2 text-sm font-medium text-lieferando-dark shadow-sm transition hover:bg-lieferando-50"
+            title={`Komplette Excel mit allen ${restaurants.length} Restaurants`}
+          >
+            <FileSpreadsheet className="h-4 w-4" />
+            Gesamte Excel
+          </button>
         </div>
       </div>
     </div>
@@ -173,6 +217,17 @@ function Toggle({
       {label}
     </label>
   );
+}
+
+function describeFilters(filters: Filters): string {
+  const parts: string[] = [];
+  if (filters.search) parts.push(`Suche="${filters.search}"`);
+  if (filters.kategorie) parts.push(`Kategorie=${filters.kategorie}`);
+  if (filters.stadtteil) parts.push(`Stadtteil=${filters.stadtteil}`);
+  if (filters.hotOnly) parts.push("Nur Hot Leads");
+  if (filters.akquiseOnly) parts.push("Nur Akquise-Kandidaten");
+  if (filters.lieferandoOnly) parts.push("Nur Lieferando-Partner");
+  return parts.join(" · ");
 }
 
 function uniqueSorted(values: string[]): string[] {
