@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, FileSpreadsheet } from "lucide-react";
-import type { Restaurant } from "@/app/types";
+import type { ImpressumRestaurant, Restaurant } from "@/app/types";
 import { exportAll, exportFiltered } from "@/lib/excel-export";
 
 export type Filters = {
@@ -19,6 +19,7 @@ type Props = {
   onChange: (next: Filters) => void;
   totalShown: number;
   filteredRestaurants?: Restaurant[];
+  impressumLookup?: Map<string, ImpressumRestaurant>;
 };
 
 export function FilterBar({
@@ -27,6 +28,7 @@ export function FilterBar({
   onChange,
   totalShown,
   filteredRestaurants,
+  impressumLookup,
 }: Props) {
   const kategorien = uniqueSorted(restaurants.map((r) => r.kategorie));
   const stadtteile = uniqueSorted(restaurants.map((r) => r.stadtteil));
@@ -43,11 +45,11 @@ export function FilterBar({
 
   const handleExportFiltered = () => {
     const list = filteredRestaurants ?? restaurants;
-    void exportFiltered(list, filterDescription || "Alle Restaurants");
+    void exportFiltered(list, filterDescription || "Alle Restaurants", impressumLookup);
   };
 
   const handleExportAll = () => {
-    void exportAll(restaurants);
+    void exportAll(restaurants, impressumLookup);
   };
 
   return (

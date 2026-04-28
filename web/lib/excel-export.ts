@@ -1,6 +1,6 @@
 "use client";
 
-import type { Restaurant } from "@/app/types";
+import type { ImpressumRestaurant, Restaurant } from "@/app/types";
 
 // Lazy-Import von xlsx, damit es nicht im Initial-Bundle landet
 async function getXLSX() {
@@ -21,7 +21,10 @@ const KATEGORIE_LABEL: Record<string, string> = {
 
 const SCORE_LABEL = { 3: "Hot", 2: "Warm", 1: "Cold" } as const;
 
-function rowFor(r: Restaurant) {
+function rowFor(
+  r: Restaurant,
+  imp?: ImpressumRestaurant | null,
+) {
   return {
     Name: r.name,
     Kategorie: KATEGORIE_LABEL[r.kategorie] ?? r.kategorie,
@@ -34,6 +37,14 @@ function rowFor(r: Restaurant) {
     Lead_Score: r.lead_score,
     Lead_Label: SCORE_LABEL[r.lead_score],
     Auf_Lieferando: r.auf_lieferando ? "Ja" : "Nein",
+    // Decision-Maker-Spalten aus Impressum
+    Inhaber: imp?.inhaber_name ?? "",
+    Geschaeftsform: imp?.geschaeftsform ?? "",
+    Geschaeftsfuehrer: imp?.geschaeftsfuehrer ?? "",
+    Inhaber_Telefon: imp?.telefon ?? "",
+    Inhaber_Email: imp?.email ?? "",
+    Handelsregister: imp?.handelsregister ?? "",
+    USt_IdNr: imp?.ust_id ?? "",
     Latitude: r.lat,
     Longitude: r.lon,
     Notizen: "",
@@ -43,7 +54,10 @@ function rowFor(r: Restaurant) {
 const HEADERS = [
   "Name", "Kategorie", "Adresse", "Stadtteil", "Cuisine",
   "Website", "Telefon", "Hat_Website", "Lead_Score", "Lead_Label",
-  "Auf_Lieferando", "Latitude", "Longitude", "Notizen",
+  "Auf_Lieferando",
+  "Inhaber", "Geschaeftsform", "Geschaeftsfuehrer", "Inhaber_Telefon",
+  "Inhaber_Email", "Handelsregister", "USt_IdNr",
+  "Latitude", "Longitude", "Notizen",
 ];
 
 function pad2(n: number) {
@@ -59,6 +73,7 @@ export async function exportToExcel(
   restaurants: Restaurant[],
   filename: string,
   filterDescription?: string,
+  impressumLookup?: Map<string, ImpressumRestaurant>,
 ) {
   if (restaurants.length === 0) {
     alert("Keine Daten zum Exportieren — bitte Filter anpassen.");
@@ -66,7 +81,9 @@ export async function exportToExcel(
   }
 
   const XLSX = await getXLSX();
-  const rows = restaurants.map(rowFor);
+  const rows = restaurants.map((r) =>
+    rowFor(r, impressumLookup?.get(r.name) ?? null),
+  );
   const wb = XLSX.utils.book_new();
 
   // Sheet 1: Liste
@@ -74,7 +91,10 @@ export async function exportToExcel(
   ws["!cols"] = [
     { wch: 30 }, { wch: 14 }, { wch: 36 }, { wch: 22 }, { wch: 18 },
     { wch: 30 }, { wch: 18 }, { wch: 12 }, { wch: 10 }, { wch: 8 },
-    { wch: 14 }, { wch: 10 }, { wch: 10 }, { wch: 30 },
+    { wch: 14 },
+    { wch: 32 }, { wch: 14 }, { wch: 24 }, { wch: 18 },
+    { wch: 28 }, { wch: 28 }, { wch: 16 },
+    { wch: 10 }, { wch: 10 }, { wch: 30 },
   ];
   ws["!autofilter"] = { ref: ws["!ref"]! };
   ws["!freeze"] = { xSplit: 0, ySplit: 1 };
@@ -114,18 +134,24 @@ export async function exportToExcel(
 export async function exportFiltered(
   restaurants: Restaurant[],
   filterDescription: string,
+  impressumLookup?: Map<string, ImpressumRestaurant>,
 ) {
   await exportToExcel(
     restaurants,
     `partnerliste_potsdam_filtered_${timestamp()}.xlsx`,
     filterDescription,
+    impressumLookup,
   );
 }
 
-export async function exportAll(restaurants: Restaurant[]) {
+export async function exportAll(
+  restaurants: Restaurant[],
+  impressumLookup?: Map<string, ImpressumRestaurant>,
+) {
   await exportToExcel(
     restaurants,
     `partnerliste_potsdam_komplett_${timestamp()}.xlsx`,
     "Alle Restaurants (kein Filter)",
+    impressumLookup,
   );
 }

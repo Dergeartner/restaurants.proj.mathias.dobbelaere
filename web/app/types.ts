@@ -55,3 +55,26 @@ export type SpeisekartenPayload = {
   anzahl_restaurants: number;
   restaurants: SpeisekartenRestaurant[];
 };
+
+export type ImpressumRestaurant = {
+  name: string;
+  website: string;
+  impressum_url: string | null;
+  inhaber_name: string | null;
+  geschaeftsform: string | null;
+  geschaeftsfuehrer: string | null;
+  adresse: string | null;
+  telefon: string | null;
+  email: string | null;
+  handelsregister: string | null;
+  ust_id: string | null;
+  verantwortlich_inhaltlich: string | null;
+  fehler?: string | null;
+};
+
+export type ImpressumPayload = {
+  generated_at: string;
+  model: string;
+  anzahl_restaurants: number;
+  restaurants: ImpressumRestaurant[];
+};

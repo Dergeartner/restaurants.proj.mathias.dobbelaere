@@ -2,10 +2,14 @@
 
 import { useMemo } from "react";
 import {
+  Building2,
   ExternalLink,
+  FileText,
   Globe,
+  Mail,
   MapPin,
   Phone,
+  User,
   UtensilsCrossed,
 } from "lucide-react";
 
@@ -19,11 +23,17 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
-import type { Gericht, Restaurant, SpeisekartenRestaurant } from "@/app/types";
+import type {
+  Gericht,
+  ImpressumRestaurant,
+  Restaurant,
+  SpeisekartenRestaurant,
+} from "@/app/types";
 
 type Props = {
   restaurant: Restaurant | null;
   speisekarte: SpeisekartenRestaurant | null;
+  impressum?: ImpressumRestaurant | null;
   onClose: () => void;
 };
 
@@ -87,7 +97,7 @@ const KATEGORIE_LABEL: Record<string, string> = {
   biergarten: "Biergarten",
 };
 
-export function RestaurantModal({ restaurant, speisekarte, onClose }: Props) {
+export function RestaurantModal({ restaurant, speisekarte, impressum, onClose }: Props) {
   const grouped = useMemo(() => {
     if (!speisekarte || speisekarte.gerichte.length === 0) return [];
     const map = new Map<string, Gericht[]>();
@@ -188,6 +198,94 @@ export function RestaurantModal({ restaurant, speisekarte, onClose }: Props) {
                 und Website. In einer realen Sales-Pipeline würde Lieferando intern
                 über die Partner-API alle Felder direkt liefern.
               </p>
+            </div>
+          )}
+
+          {/* Inhaber & Decision-Maker (aus Impressum) */}
+          {impressum && impressum.inhaber_name && (
+            <div className="mb-4 rounded-lg border border-emerald-200 bg-emerald-50/50 p-4">
+              <div className="mb-2 flex items-center gap-2">
+                <User className="h-4 w-4 text-emerald-700" />
+                <h3 className="text-sm font-semibold text-emerald-950">
+                  Inhaber & Decision-Maker
+                </h3>
+                {impressum.geschaeftsform && (
+                  <span className="rounded bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-800">
+                    {impressum.geschaeftsform}
+                  </span>
+                )}
+              </div>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <ImpressumField
+                  icon={<Building2 className="h-3.5 w-3.5 text-emerald-700" />}
+                  label="Inhaber"
+                  value={impressum.inhaber_name}
+                />
+                {impressum.geschaeftsfuehrer && (
+                  <ImpressumField
+                    icon={<User className="h-3.5 w-3.5 text-emerald-700" />}
+                    label="Geschäftsführer"
+                    value={impressum.geschaeftsfuehrer}
+                  />
+                )}
+                {impressum.telefon && (
+                  <ImpressumField
+                    icon={<Phone className="h-3.5 w-3.5 text-emerald-700" />}
+                    label="Telefon (Inhaber)"
+                    value={
+                      <a
+                        href={`tel:${impressum.telefon}`}
+                        className="text-blue-600 hover:underline"
+                      >
+                        {impressum.telefon}
+                      </a>
+                    }
+                  />
+                )}
+                {impressum.email && (
+                  <ImpressumField
+                    icon={<Mail className="h-3.5 w-3.5 text-emerald-700" />}
+                    label="E-Mail"
+                    value={
+                      <a
+                        href={`mailto:${impressum.email}`}
+                        className="text-blue-600 hover:underline"
+                      >
+                        {impressum.email}
+                      </a>
+                    }
+                  />
+                )}
+                {impressum.handelsregister && (
+                  <ImpressumField
+                    icon={<FileText className="h-3.5 w-3.5 text-emerald-700" />}
+                    label="Handelsregister"
+                    value={impressum.handelsregister}
+                  />
+                )}
+                {impressum.ust_id && (
+                  <ImpressumField
+                    icon={<FileText className="h-3.5 w-3.5 text-emerald-700" />}
+                    label="USt-IdNr."
+                    value={
+                      <span className="font-mono text-xs">{impressum.ust_id}</span>
+                    }
+                  />
+                )}
+              </div>
+              {impressum.impressum_url && (
+                <div className="mt-2 text-[11px] text-emerald-800/80">
+                  Quelle:{" "}
+                  <a
+                    href={impressum.impressum_url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-blue-600 hover:underline"
+                  >
+                    {impressum.impressum_url}
+                  </a>
+                </div>
+              )}
             </div>
           )}
 
@@ -316,6 +414,28 @@ export function RestaurantModal({ restaurant, speisekarte, onClose }: Props) {
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+function ImpressumField({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-start gap-2">
+      <div className="mt-0.5 shrink-0">{icon}</div>
+      <div className="min-w-0 flex-1">
+        <div className="text-[10px] font-medium uppercase tracking-wider text-emerald-700/80">
+          {label}
+        </div>
+        <div className="mt-0.5 break-words text-xs text-neutral-900">{value}</div>
+      </div>
+    </div>
   );
 }
 

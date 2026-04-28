@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import type {
   DataPayload,
+  ImpressumPayload,
+  ImpressumRestaurant,
   PreisVergleichPayload,
   Restaurant,
   SpeisekartenPayload,
@@ -40,6 +42,7 @@ export default function Page() {
   const [data, setData] = useState<DataPayload | null>(null);
   const [preise, setPreise] = useState<PreisVergleichPayload | null>(null);
   const [speisekarten, setSpeisekarten] = useState<SpeisekartenPayload | null>(null);
+  const [impressum, setImpressum] = useState<ImpressumPayload | null>(null);
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [view, setView] = useState<View>("table");
   const [selected, setSelected] = useState<Restaurant | null>(null);
@@ -51,6 +54,14 @@ export default function Page() {
     }
     return map;
   }, [speisekarten]);
+
+  const impressumLookup = useMemo(() => {
+    const map = new Map<string, ImpressumRestaurant>();
+    if (impressum) {
+      for (const r of impressum.restaurants) map.set(r.name, r);
+    }
+    return map;
+  }, [impressum]);
 
   useEffect(() => {
     fetch("/restaurants.json")
@@ -65,6 +76,10 @@ export default function Page() {
       .then((r) => (r.ok ? r.json() : null))
       .then((d: SpeisekartenPayload | null) => setSpeisekarten(d))
       .catch(() => setSpeisekarten(null));
+    fetch("/impressum.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: ImpressumPayload | null) => setImpressum(d))
+      .catch(() => setImpressum(null));
   }, []);
 
   const filtered = useMemo<Restaurant[]>(() => {
@@ -118,6 +133,7 @@ export default function Page() {
         filters={filters}
         onChange={setFilters}
         totalShown={filtered.length}
+        impressumLookup={impressumLookup}
       />
 
       <div className="flex items-center gap-2">
@@ -143,6 +159,7 @@ export default function Page() {
       <RestaurantModal
         restaurant={selected}
         speisekarte={selected ? speisekartenLookup.get(selected.name) ?? null : null}
+        impressum={selected ? impressumLookup.get(selected.name) ?? null : null}
         onClose={() => setSelected(null)}
       />
 
