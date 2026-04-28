@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 250 250;
+  --foreground: 23 23 23;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Leaflet-Karten-Container muss explizite Höhe haben */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}

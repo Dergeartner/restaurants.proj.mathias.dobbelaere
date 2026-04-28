@@ -1,0 +1,12 @@
+# Lieferando-Partner Potsdam – manuell erfasste Partnernamen
+#
+# Quelle: lieferando.de Marktübersicht Potsdam, Stand 2026-04-27
+# (Insgesamt 132 Partner laut öffentlicher Marktübersicht.)
+#
+# Ein Name pro Zeile. Zeilen, die mit "#" beginnen, werden ignoriert.
+# Beim nächsten Lauf von scrape_potsdam.py werden die Namen per
+# Fuzzy-Match (Schwellwert 88) gegen die OSM-Liste abgeglichen und
+# als Auf_Lieferando=TRUE markiert.
+#
+# Optional: erst die Top 50 erfassen, später auf 132 erweitern.
+
