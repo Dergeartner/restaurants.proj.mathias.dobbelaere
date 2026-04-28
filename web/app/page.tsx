@@ -265,24 +265,75 @@ function TabIcon({ name, active }: { name: "table" | "map"; active: boolean }) {
 
 function Footer() {
   return (
-    <footer className="border-t border-neutral-200 pt-6 text-xs text-neutral-500">
-      <p>
-        Daten: <a href="https://www.openstreetmap.org/copyright" className="underline">OpenStreetMap (ODbL)</a>.
-        Lieferando-Marktanzahl manuell aus der öffentlichen Marktübersicht erfasst (kein Scraping).
-      </p>
-      <p className="mt-1">
-        Bewerbungs-Mini-Projekt für die Stelle <em>Werkstudent Strategic Accounts</em> bei Just Eat Takeaway / Lieferando.
-        Source:{" "}
-        <a
-          href="https://github.com/Dergeartner/restaurants.proj.mathias.dobbelaere"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="underline"
-        >
-          GitHub
-        </a>
-        .
-      </p>
+    <footer className="space-y-3 border-t border-neutral-200 pt-6 text-xs text-neutral-500">
+      <div>
+        <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-700">
+          Daten-Quellen
+        </div>
+        <p className="mt-1">
+          <a
+            href="https://www.openstreetmap.org/copyright"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline"
+          >
+            OpenStreetMap (ODbL)
+          </a>{" "}
+          via Overpass API für Restaurant-Universe + Stadtteilgrenzen ·{" "}
+          <a
+            href="https://github.com/gosom/google-maps-scraper"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline"
+          >
+            gosom/google-maps-scraper
+          </a>{" "}
+          (open-source) für Telefon/Website-Anreicherung · Lieferando-Marktanzahl
+          manuell aus der öffentlichen Marktübersicht erfasst (kein Scraping) ·
+          Restaurant-Webseiten + Impressum-Pflicht-Veröffentlichungen (§5 TMG)
+          für Speisekarten und Decision-Maker.
+        </p>
+      </div>
+
+      <div>
+        <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-700">
+          Tech-Stack
+        </div>
+        <p className="mt-1">
+          Python 3.13 (requests, BeautifulSoup, openpyxl, pypdf, rapidfuzz) ·{" "}
+          <a
+            href="https://platform.openai.com/docs/models"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline"
+          >
+            OpenAI GPT-4o-mini
+          </a>{" "}
+          mit JSON-Schema-Validation für Speisekarten- und Impressum-Extraktion ·
+          Next.js 16 + TypeScript + Tailwind + shadcn/ui · Leaflet + OSM-Tiles ·
+          Vercel-Deploy.
+        </p>
+      </div>
+
+      <div>
+        <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-700">
+          Über das Projekt
+        </div>
+        <p className="mt-1">
+          Bewerbungs-Mini-Projekt für die Stelle{" "}
+          <em>Werkstudent Strategic Accounts</em> bei Just Eat Takeaway / Lieferando.
+          Source:{" "}
+          <a
+            href="https://github.com/Dergeartner/restaurants.proj.mathias.dobbelaere"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline"
+          >
+            GitHub
+          </a>
+          .
+        </p>
+      </div>
     </footer>
   );
 }
