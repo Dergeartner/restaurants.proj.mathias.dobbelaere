@@ -1,13 +1,19 @@
 """
 GMaps-Telefon-Anreicherung für Potsdam-Restaurants
 ====================================================
-Nutzt den lokalen google-maps-scraper (gosom/google-maps-scraper, Windows-Binary
-aus C:\\accende\\accende), um eine GMaps-Discovery für Gastro-Betriebe in Potsdam
-zu fahren. Output ist eine CSV, die anschließend in scrape_potsdam.py mit der
-OSM-Liste fuzzy-gemerged wird (Name + Geo-Distanz < 100 m).
+Nutzt den open-source google-maps-scraper (https://github.com/gosom/google-maps-scraper)
+für Discovery von Gastro-Betrieben in Potsdam. Output ist eine CSV, die anschließend
+in scrape_potsdam.py mit der OSM-Liste fuzzy-gemerged wird (Name + Geo-Distanz < 100 m).
+
+Voraussetzung:
+- Lokal kompilierte Binary des gosom-Scrapers, z.B. via:
+    git clone https://github.com/gosom/google-maps-scraper && cd google-maps-scraper && go build
+- Pfad zur Binary entweder über --binary Argument oder GMAPS_SCRAPER_BINARY ENV-Variable
 
 Aufruf:
-    python enrich_gmaps.py            # nutzt Default-Pfad zur Binary
+    set GMAPS_SCRAPER_BINARY=C:\\path\\to\\google-maps-scraper.exe
+    python enrich_gmaps.py
+    # oder
     python enrich_gmaps.py --binary "C:\\path\\to\\google-maps-scraper.exe"
 
 Output: output/gmaps_potsdam.csv  (CSV-Schema vom gosom-Scraper)
@@ -23,8 +29,13 @@ import sys
 import time
 from pathlib import Path
 
-# Pfad zur kompilierten Windows-Binary (aus dem Accende-Setup)
-DEFAULT_BINARY = Path(r"C:\accende\accende\scrapers\google-maps-scraper\google-maps-scraper.exe")
+# Default: aus ENV-Variable lesen, sonst lokaler ./google-maps-scraper/-Ordner
+DEFAULT_BINARY = Path(
+    os.environ.get(
+        "GMAPS_SCRAPER_BINARY",
+        str(Path.home() / "google-maps-scraper" / "google-maps-scraper.exe"),
+    )
+)
 
 OUTPUT_DIR = Path(__file__).parent / "output"
 
