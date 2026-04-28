@@ -274,7 +274,7 @@ function Footer() {
         Bewerbungs-Mini-Projekt für die Stelle <em>Werkstudent Strategic Accounts</em> bei Just Eat Takeaway / Lieferando.
         Source:{" "}
         <a
-          href="https://github.com/"
+          href="https://github.com/Dergeartner/restaurants.proj.mathias.dobbelaere"
           target="_blank"
           rel="noreferrer noopener"
           className="underline"
