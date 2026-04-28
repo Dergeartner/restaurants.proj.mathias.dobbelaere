@@ -45,7 +45,7 @@ export default function Page() {
   const [speisekarten, setSpeisekarten] = useState<SpeisekartenPayload | null>(null);
   const [impressum, setImpressum] = useState<ImpressumPayload | null>(null);
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
-  const [view, setView] = useState<View>("table");
+  const [view, setView] = useState<View>("map");
   const [selected, setSelected] = useState<Restaurant | null>(null);
 
   const speisekartenLookup = useMemo(() => {
@@ -145,11 +145,11 @@ export default function Page() {
 
       <div className="flex items-center gap-2">
         <div className="inline-flex rounded-lg border border-neutral-300 bg-white p-1 shadow-sm">
-          <ViewTab active={view === "table"} onClick={() => setView("table")} icon="table">
-            Tabelle
-          </ViewTab>
           <ViewTab active={view === "map"} onClick={() => setView("map")} icon="map">
             Karte
+          </ViewTab>
+          <ViewTab active={view === "table"} onClick={() => setView("table")} icon="table">
+            Tabelle
           </ViewTab>
         </div>
         <span className="ml-2 text-xs text-neutral-500">
@@ -160,7 +160,11 @@ export default function Page() {
       {view === "table" ? (
         <RestaurantTable restaurants={filtered} onSelect={setSelected} />
       ) : (
-        <RestaurantMap restaurants={filtered} />
+        <RestaurantMap
+          restaurants={filtered}
+          onSelect={setSelected}
+          impressumLookup={impressumLookup}
+        />
       )}
 
       <RestaurantModal

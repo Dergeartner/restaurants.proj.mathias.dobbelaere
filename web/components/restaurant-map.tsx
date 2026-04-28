@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from "react-leaflet";
-import type { Restaurant } from "@/app/types";
+import type { ImpressumRestaurant, Restaurant } from "@/app/types";
 
 const POTSDAM_CENTER: [number, number] = [52.4009, 13.0591];
 
@@ -14,9 +14,15 @@ const SCORE_COLORS = {
 
 type Props = {
   restaurants: Restaurant[];
+  onSelect?: (restaurant: Restaurant) => void;
+  impressumLookup?: Map<string, ImpressumRestaurant>;
 };
 
-export default function RestaurantMap({ restaurants }: Props) {
+export default function RestaurantMap({
+  restaurants,
+  onSelect,
+  impressumLookup,
+}: Props) {
   const counts = {
     hot: restaurants.filter((r) => r.lead_score === 3).length,
     warm: restaurants.filter((r) => r.lead_score === 2).length,
@@ -33,7 +39,9 @@ export default function RestaurantMap({ restaurants }: Props) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <FitToData restaurants={restaurants} />
-        {restaurants.map((r, i) => (
+        {restaurants.map((r, i) => {
+          const imp = impressumLookup?.get(r.name) ?? null;
+          return (
           <CircleMarker
             key={`${r.name}-${i}`}
             center={[r.lat, r.lon]}
@@ -77,6 +85,52 @@ export default function RestaurantMap({ restaurants }: Props) {
                     </a>
                   </div>
                 )}
+                {imp &&
+                  (imp.geschaeftsform ||
+                    imp.inhaber_name ||
+                    imp.geschaeftsfuehrer ||
+                    imp.email) && (
+                    <div className="mt-2 space-y-0.5 rounded-md bg-neutral-50 px-2 py-1.5 text-[11px] text-neutral-700">
+                      <div className="text-[9px] font-semibold uppercase tracking-wide text-neutral-500">
+                        Decision-Maker (§5 TMG)
+                      </div>
+                      {imp.geschaeftsform && (
+                        <div>
+                          <span className="text-neutral-500">Form:</span>{" "}
+                          <strong>{imp.geschaeftsform}</strong>
+                        </div>
+                      )}
+                      {imp.inhaber_name && (
+                        <div>
+                          <span className="text-neutral-500">Inhaber:</span>{" "}
+                          <strong>{imp.inhaber_name}</strong>
+                        </div>
+                      )}
+                      {imp.geschaeftsfuehrer && (
+                        <div>
+                          <span className="text-neutral-500">GF:</span>{" "}
+                          <strong>{imp.geschaeftsfuehrer}</strong>
+                        </div>
+                      )}
+                      {imp.email && (
+                        <div className="truncate">
+                          <span className="text-neutral-500">E-Mail:</span>{" "}
+                          <a
+                            href={`mailto:${imp.email}`}
+                            className="text-blue-600 hover:underline"
+                          >
+                            {imp.email}
+                          </a>
+                        </div>
+                      )}
+                      {imp.handelsregister && (
+                        <div className="truncate">
+                          <span className="text-neutral-500">HR:</span>{" "}
+                          {imp.handelsregister}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 <div className="mt-2 flex items-center gap-2 border-t border-neutral-200 pt-2 text-xs">
                   <span
                     className="inline-block h-2 w-2 rounded-full"
@@ -89,10 +143,20 @@ export default function RestaurantMap({ restaurants }: Props) {
                     </span>
                   )}
                 </div>
+                {onSelect && (
+                  <button
+                    type="button"
+                    onClick={() => onSelect(r)}
+                    className="mt-2 w-full rounded-md bg-lieferando px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-lieferando-dark"
+                  >
+                    Details, Speisekarte &amp; Decision-Maker →
+                  </button>
+                )}
               </div>
             </Popup>
           </CircleMarker>
-        ))}
+          );
+        })}
       </MapContainer>
       </div>
     </div>
