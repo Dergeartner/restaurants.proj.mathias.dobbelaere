@@ -10,8 +10,6 @@ import type {
 } from "@/app/types";
 import { Badge } from "@/components/ui/badge";
 import { CuisineDonut } from "@/components/cuisine-donut";
-import { StadtteilMap } from "@/components/stadtteil-map";
-import { StadtteilRestaurantsModal } from "@/components/stadtteil-restaurants-modal";
 import { DrilldownModal, type DrilldownEntry } from "@/components/drilldown-modal";
 
 type Props = {
@@ -118,20 +116,6 @@ export function MarktInsights({
     description: "",
     entries: [],
   });
-  const [stadtteilDetail, setStadtteilDetail] = useState<{
-    open: boolean;
-    displayName: string | null;
-    osmNames: string[];
-  }>({ open: false, displayName: null, osmNames: [] });
-
-  const openStadtteilRestaurants = (osmNames: string[], displayName: string) => {
-    setStadtteilDetail({ open: true, displayName, osmNames });
-  };
-
-  const stadtteilDetailRestaurants = useMemo(() => {
-    if (!stadtteilDetail.open || stadtteilDetail.osmNames.length === 0) return [];
-    return restaurants.filter((r) => stadtteilDetail.osmNames.includes(r.stadtteil));
-  }, [restaurants, stadtteilDetail]);
 
   const restaurantLookup = useMemo(
     () => new Map(restaurants.map((r) => [r.name, r])),
@@ -393,13 +377,6 @@ export function MarktInsights({
         </div>
       </div>
 
-      {/* Stadtteil-Karte */}
-      <StadtteilMap
-        restaurants={restaurants}
-        speisekartenRestaurants={speisekarten?.restaurants}
-        onSelectStadtteil={openStadtteilRestaurants}
-      />
-
       {/* Cuisine-Donut */}
       <CuisineDonut restaurants={restaurants} onSelectCuisine={openCuisineDrilldown} />
 
@@ -439,18 +416,6 @@ export function MarktInsights({
         onRestaurantClick={onRestaurantClick}
       />
 
-      <StadtteilRestaurantsModal
-        open={stadtteilDetail.open}
-        stadtteil={stadtteilDetail.displayName}
-        restaurants={stadtteilDetailRestaurants}
-        onClose={() => setStadtteilDetail({ open: false, displayName: null, osmNames: [] })}
-        onRestaurantClick={(r) => {
-          setStadtteilDetail({ open: false, displayName: null, osmNames: [] });
-          if (onRestaurantClick) {
-            setTimeout(() => onRestaurantClick(r), 100);
-          }
-        }}
-      />
 
       <details className="group rounded-md border border-blue-200/60 bg-white/40 px-3 py-2 text-[11px] leading-relaxed text-blue-800/90">
         <summary className="cursor-pointer select-none font-medium text-blue-900 marker:text-blue-400">
