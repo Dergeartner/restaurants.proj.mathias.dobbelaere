@@ -16,6 +16,7 @@ import { FilterBar, type Filters } from "@/components/filter-bar";
 import { RestaurantTable } from "@/components/restaurant-table";
 import { PreisInsight } from "@/components/preis-insight";
 import { MarktInsights } from "@/components/markt-insights";
+import { RestaurantGruppen } from "@/components/restaurant-gruppen";
 import { RestaurantModal } from "@/components/restaurant-modal";
 
 const RestaurantMap = dynamic(() => import("@/components/restaurant-map"), {
@@ -122,6 +123,12 @@ export default function Page() {
       <MarktInsights
         speisekarten={speisekarten}
         restaurants={data.restaurants}
+        onRestaurantClick={setSelected}
+      />
+
+      <RestaurantGruppen
+        restaurants={data.restaurants}
+        impressum={impressum?.restaurants ?? null}
         onRestaurantClick={setSelected}
       />
 
