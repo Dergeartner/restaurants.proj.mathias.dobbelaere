@@ -231,7 +231,7 @@ export function RestaurantModal({ restaurant, speisekarte, impressum, onClose }:
                 {impressum.telefon && (
                   <ImpressumField
                     icon={<Phone className="h-3.5 w-3.5 text-emerald-700" />}
-                    label="Telefon (Inhaber)"
+                    label="Telefon (Impressum)"
                     value={
                       <a
                         href={`tel:${impressum.telefon}`}
@@ -245,7 +245,7 @@ export function RestaurantModal({ restaurant, speisekarte, impressum, onClose }:
                 {impressum.email && (
                   <ImpressumField
                     icon={<Mail className="h-3.5 w-3.5 text-emerald-700" />}
-                    label="E-Mail"
+                    label="E-Mail (Impressum)"
                     value={
                       <a
                         href={`mailto:${impressum.email}`}
@@ -274,16 +274,24 @@ export function RestaurantModal({ restaurant, speisekarte, impressum, onClose }:
                 )}
               </div>
               {impressum.impressum_url && (
-                <div className="mt-2 text-[11px] text-emerald-800/80">
-                  Quelle:{" "}
-                  <a
-                    href={impressum.impressum_url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="text-blue-600 hover:underline"
-                  >
-                    {impressum.impressum_url}
-                  </a>
+                <div className="mt-2 space-y-0.5 text-[11px] text-emerald-800/80">
+                  <div>
+                    <span className="font-medium">Hinweis:</span> Telefon und E-Mail
+                    stammen aus dem TMG-Pflicht-Impressum — bei juristischen Personen
+                    (GmbH/UG/KG) ist das die Geschäftsführungs-/Zentralnummer, nicht
+                    zwingend der Direktkontakt zum Inhaber.
+                  </div>
+                  <div>
+                    Quelle:{" "}
+                    <a
+                      href={impressum.impressum_url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-blue-600 hover:underline"
+                    >
+                      {impressum.impressum_url}
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
