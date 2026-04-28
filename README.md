@@ -11,9 +11,10 @@ Sekunden refreshbar ist statt in Stunden.
 
 ## Live-Demo
 
-→ `https://<vercel-url>.vercel.app` _(Link nach Deploy einfügen)_
+→ **https://restaurants-proj-mathias-dobbelaere.vercel.app**
 
-![Screenshot](docs/screenshot.png) _(Screenshot nach Deploy einfügen)_
+_Klick auf eine Tabellenzeile öffnet das Detail-Modal mit Stammdaten und kompletter Speisekarte._
+_Klick auf einen Balken oder das Donut-Diagramm öffnet einen Drilldown mit allen zugehörigen Speisen + Restaurants._
 
 ## Worum geht's?
 
