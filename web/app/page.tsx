@@ -120,13 +120,18 @@ export default function Page() {
         totalShown={filtered.length}
       />
 
-      <div className="flex items-center gap-2 border-b border-neutral-200">
-        <ViewTab active={view === "table"} onClick={() => setView("table")}>
-          Tabelle
-        </ViewTab>
-        <ViewTab active={view === "map"} onClick={() => setView("map")}>
-          Karte
-        </ViewTab>
+      <div className="flex items-center gap-2">
+        <div className="inline-flex rounded-lg border border-neutral-300 bg-white p-1 shadow-sm">
+          <ViewTab active={view === "table"} onClick={() => setView("table")} icon="table">
+            Tabelle
+          </ViewTab>
+          <ViewTab active={view === "map"} onClick={() => setView("map")} icon="map">
+            Karte
+          </ViewTab>
+        </div>
+        <span className="ml-2 text-xs text-neutral-500">
+          {view === "table" ? "Sortier-/Klickbare Restaurantliste" : "Geografische Verteilung mit farbigen Pins"}
+        </span>
       </div>
 
       {view === "table" ? (
@@ -177,24 +182,60 @@ function Header({
 function ViewTab({
   active,
   onClick,
+  icon,
   children,
 }: {
   active: boolean;
   onClick: () => void;
+  icon: "table" | "map";
   children: React.ReactNode;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium transition ${
+      className={`inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition ${
         active
-          ? "border-lieferando text-lieferando"
-          : "border-transparent text-neutral-500 hover:text-neutral-700"
+          ? "bg-lieferando text-white shadow-md"
+          : "bg-transparent text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
       }`}
     >
+      <TabIcon name={icon} active={active} />
       {children}
     </button>
+  );
+}
+
+function TabIcon({ name, active }: { name: "table" | "map"; active: boolean }) {
+  const stroke = active ? "currentColor" : "currentColor";
+  if (name === "table") {
+    return (
+      <svg
+        className="h-4 w-4"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 5h18M3 12h18M3 19h18" />
+      </svg>
+    );
+  }
+  return (
+    <svg
+      className="h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2z" />
+      <path d="M9 4v14M15 6v14" />
+    </svg>
   );
 }
 
