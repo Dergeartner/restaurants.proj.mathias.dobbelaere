@@ -120,22 +120,18 @@ export function MarktInsights({
   });
   const [stadtteilDetail, setStadtteilDetail] = useState<{
     open: boolean;
-    name: string | null;
-  }>({ open: false, name: null });
+    displayName: string | null;
+    osmNames: string[];
+  }>({ open: false, displayName: null, osmNames: [] });
 
-  const restaurantsByStadtteil = useMemo(() => {
-    const map = new Map<string, Restaurant[]>();
-    for (const r of restaurants) {
-      if (!r.stadtteil || r.stadtteil === "Unbekannt") continue;
-      if (!map.has(r.stadtteil)) map.set(r.stadtteil, []);
-      map.get(r.stadtteil)!.push(r);
-    }
-    return map;
-  }, [restaurants]);
-
-  const openStadtteilRestaurants = (stadtteil: string) => {
-    setStadtteilDetail({ open: true, name: stadtteil });
+  const openStadtteilRestaurants = (osmNames: string[], displayName: string) => {
+    setStadtteilDetail({ open: true, displayName, osmNames });
   };
+
+  const stadtteilDetailRestaurants = useMemo(() => {
+    if (!stadtteilDetail.open || stadtteilDetail.osmNames.length === 0) return [];
+    return restaurants.filter((r) => stadtteilDetail.osmNames.includes(r.stadtteil));
+  }, [restaurants, stadtteilDetail]);
 
   const restaurantLookup = useMemo(
     () => new Map(restaurants.map((r) => [r.name, r])),
@@ -445,15 +441,11 @@ export function MarktInsights({
 
       <StadtteilRestaurantsModal
         open={stadtteilDetail.open}
-        stadtteil={stadtteilDetail.name}
-        restaurants={
-          stadtteilDetail.name
-            ? restaurantsByStadtteil.get(stadtteilDetail.name) ?? []
-            : []
-        }
-        onClose={() => setStadtteilDetail({ open: false, name: null })}
+        stadtteil={stadtteilDetail.displayName}
+        restaurants={stadtteilDetailRestaurants}
+        onClose={() => setStadtteilDetail({ open: false, displayName: null, osmNames: [] })}
         onRestaurantClick={(r) => {
-          setStadtteilDetail({ open: false, name: null });
+          setStadtteilDetail({ open: false, displayName: null, osmNames: [] });
           if (onRestaurantClick) {
             setTimeout(() => onRestaurantClick(r), 100);
           }

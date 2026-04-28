@@ -4,18 +4,20 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MapPin } from "lucide-react";
 import type { Restaurant } from "@/app/types";
 
+// Mapping Bezirks-Code → OSM-Stadtteil-Namen (kann mehrere sein, wenn die OSM-
+// Sub-Stadtteile zum gleichen Bezirk gehören). Stats werden über alle aggregiert.
 const BEZIRKS_MAPPING: Record<string, string[]> = {
-  "11": ["Historische Innenstadt", "Nikolaigärten"],
-  "12": ["Brandenburger Vorstadt", "Westliche Vorstadt"],
-  "13": ["Berliner Vorstadt"],
-  "14": ["Jägervorstadt", "Nauener Vorstadt"],
-  "15": ["Nauener Vorstadt"],
-  "16": ["Templiner Vorstadt"],
+  "11": ["Historische Innenstadt", "Nikolaigärten", "Zentrum Ost"],
+  "12": ["Brandenburger Vorstadt", "Westliche Vorstadt", "Hauptbahnhof und Brauhausberg Nord"],
+  "13": ["Berliner Vorstadt", "Bergstücken"],
+  "14": ["Jägervorstadt"],
+  "15": ["Nauener Vorstadt", "Bergstücken"],
+  "16": ["Templiner Vorstadt", "Hermannswerder"],
   "17": ["Teltower Vorstadt", "Auf dem Kiewitt"],
-  "21": ["Babelsberg Nord"],
-  "22": ["Babelsberg Süd"],
+  "21": ["Babelsberg Nord", "Jutekiez"],
+  "22": ["Babelsberg Süd", "Viertel der Seidenweber"],
   "23": ["Klein Glienicke"],
-  "31": ["Bornim", "Nedlitz"],
+  "31": ["Bornim", "Nedlitz", "Sacrow"],
   "32": ["Bornstedt", "Bornstedter Feld"],
   "41": ["Eiche"],
   "43": ["Golm"],
@@ -24,7 +26,7 @@ const BEZIRKS_MAPPING: Record<string, string[]> = {
   "52": ["Stern"],
   "53": ["Drewitz"],
   "61": ["Schlaatz"],
-  "62": ["Schlaatz"],
+  "62": ["Waldstadt I und Industriegelände"],
   "63": ["Waldstadt I"],
   "64": ["Waldstadt II"],
   "65": ["Industriegelände"],
@@ -75,7 +77,8 @@ const BEZIRKS_POSITIONS: Record<string, { x: number; y: number }> = {
 };
 
 type StadtteilStats = {
-  name: string;
+  name: string;       // Display-Name (Bezirks-Hauptname)
+  osmNames: string[]; // alle OSM-Stadtteile die zu diesem Bezirk gehören
   count: number;
   median_price: number | null;
   hot_leads: number;
@@ -85,7 +88,8 @@ type StadtteilStats = {
 type Props = {
   restaurants: Restaurant[];
   speisekartenRestaurants?: { name: string; gerichte: { preis: number; kategorie: string }[] }[];
-  onSelectStadtteil?: (stadtteil: string) => void;
+  // Bekommt eine Liste aller OSM-Stadtteilnamen die zum geklickten Bezirk gehören
+  onSelectStadtteil?: (osmStadtteilNames: string[], displayName: string) => void;
 };
 
 function median(values: number[]): number | null {
@@ -139,44 +143,54 @@ export function StadtteilMap({
   const [hovered, setHovered] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
 
+  // Aggregat pro BEZIRKS-Code (nicht pro feinem OSM-Stadtteil)
   const stadtteilStats = useMemo<Map<string, StadtteilStats>>(() => {
     const result = new Map<string, StadtteilStats>();
-    const speisekartenMap = new Map<string, number[]>();
+    const restMedians = new Map<string, number>(); // pro Restaurant: Median-Preis seiner Speisen
     if (speisekartenRestaurants) {
       for (const sr of speisekartenRestaurants) {
-        const r = restaurants.find((x) => x.name === sr.name);
-        if (!r || !r.stadtteil || r.stadtteil === "Unbekannt") continue;
         const prices = sr.gerichte
           .filter((g) => SPEISE_KAT.has((g.kategorie ?? "").toLowerCase()) || !g.kategorie)
           .map((g) => g.preis)
           .filter((p) => p >= 4 && p <= 60);
         if (prices.length === 0) continue;
         const m = median(prices);
-        if (m == null) continue;
-        if (!speisekartenMap.has(r.stadtteil)) speisekartenMap.set(r.stadtteil, []);
-        speisekartenMap.get(r.stadtteil)!.push(m);
+        if (m != null) restMedians.set(sr.name, m);
       }
     }
-    for (const r of restaurants) {
-      if (!r.stadtteil || r.stadtteil === "Unbekannt") continue;
-      const existing = result.get(r.stadtteil);
-      if (existing) {
-        existing.count++;
-        if (r.lead_score === 3) existing.hot_leads++;
-        if (r.auf_lieferando) existing.on_lieferando++;
-      } else {
-        result.set(r.stadtteil, {
-          name: r.stadtteil,
-          count: 1,
+
+    for (const [code, osmNames] of Object.entries(BEZIRKS_MAPPING)) {
+      const matches = restaurants.filter((r) =>
+        osmNames.includes(r.stadtteil),
+      );
+      if (matches.length === 0) {
+        result.set(code, {
+          name: osmNames[0] ?? code,
+          osmNames,
+          count: 0,
           median_price: null,
-          hot_leads: r.lead_score === 3 ? 1 : 0,
-          on_lieferando: r.auf_lieferando ? 1 : 0,
+          hot_leads: 0,
+          on_lieferando: 0,
         });
+        continue;
       }
-    }
-    for (const [stadtteil, prices] of speisekartenMap.entries()) {
-      const stats = result.get(stadtteil);
-      if (stats) stats.median_price = median(prices);
+      const restMedians_in: number[] = [];
+      let hot = 0;
+      let onLieferando = 0;
+      for (const r of matches) {
+        if (r.lead_score === 3) hot++;
+        if (r.auf_lieferando) onLieferando++;
+        const m = restMedians.get(r.name);
+        if (m != null) restMedians_in.push(m);
+      }
+      result.set(code, {
+        name: osmNames[0] ?? code,
+        osmNames,
+        count: matches.length,
+        median_price: restMedians_in.length > 0 ? median(restMedians_in) : null,
+        hot_leads: hot,
+        on_lieferando: onLieferando,
+      });
     }
     return result;
   }, [restaurants, speisekartenRestaurants]);
@@ -255,38 +269,31 @@ export function StadtteilMap({
       } catch {}
     });
 
-    // Color + Events anwenden
     const cleanups: (() => void)[] = [];
     for (const [code, polys] of Object.entries(polyByBezirk)) {
-      const stadtteilNames = BEZIRKS_MAPPING[code] || [];
-      let stats: StadtteilStats | null = null;
-      for (const sname of stadtteilNames) {
-        const s = stadtteilStats.get(sname);
-        if (s) {
-          stats = s;
-          break;
-        }
-      }
+      const stats = stadtteilStats.get(code);
+      const hasRestaurants = stats && stats.count > 0;
+
       const fillColor =
         stats && stats.median_price != null
           ? priceColor(stats.median_price, priceRange.min, priceRange.max)
-          : stats
-            ? "#FFF4D6" // hat Restaurants aber keine Preisdaten — sehr hell
-            : "#E5E7EB"; // gar keine Daten — neutral grau
+          : hasRestaurants
+            ? "#FFF4D6"
+            : "#E5E7EB";
 
       polys.forEach((poly) => {
         poly.style.fill = fillColor;
         poly.style.stroke = "#FFFFFF";
         poly.style.strokeWidth = "1";
-        poly.style.cursor = stats ? "pointer" : "default";
+        poly.style.cursor = hasRestaurants ? "pointer" : "default";
         poly.style.transition = "filter 0.15s, stroke-width 0.15s";
 
-        const handleEnter = (e: Event) => {
-          if (!stats) return;
+        const handleEnter = () => {
+          if (!hasRestaurants) return;
           poly.style.filter = "brightness(1.1) drop-shadow(0 0 4px rgba(255, 128, 0, 0.5))";
           poly.style.strokeWidth = "2.5";
           poly.style.stroke = "#FF8000";
-          setHovered(stats.name);
+          setHovered(code);
         };
         const handleMove = (e: MouseEvent) => {
           const rect = container.getBoundingClientRect();
@@ -300,15 +307,17 @@ export function StadtteilMap({
           setTooltipPos(null);
         };
         const handleClick = () => {
-          if (stats && onSelectStadtteil) onSelectStadtteil(stats.name);
+          if (hasRestaurants && stats && onSelectStadtteil) {
+            onSelectStadtteil(stats.osmNames, stats.name);
+          }
         };
 
-        poly.addEventListener("mouseenter", handleEnter as EventListener);
+        poly.addEventListener("mouseenter", handleEnter);
         poly.addEventListener("mousemove", handleMove as EventListener);
         poly.addEventListener("mouseleave", handleLeave);
         poly.addEventListener("click", handleClick);
         cleanups.push(() => {
-          poly.removeEventListener("mouseenter", handleEnter as EventListener);
+          poly.removeEventListener("mouseenter", handleEnter);
           poly.removeEventListener("mousemove", handleMove as EventListener);
           poly.removeEventListener("mouseleave", handleLeave);
           poly.removeEventListener("click", handleClick);
@@ -321,7 +330,7 @@ export function StadtteilMap({
     };
   }, [svgLoaded, stadtteilStats, priceRange, onSelectStadtteil]);
 
-  const hoveredStats = hovered ? stadtteilStats.get(hovered) : null;
+  const hoveredStats = hovered != null ? stadtteilStats.get(hovered) : null;
 
   return (
     <div className="rounded-lg border border-blue-100 bg-white p-5 shadow-sm">
